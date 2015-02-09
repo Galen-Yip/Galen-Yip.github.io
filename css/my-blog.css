@@ -401,3 +401,26 @@ img::-moz-selection {
 body {
   webkit-tap-highlight-color: #0085a1;
 }
+.comment-wrap {
+  margin-top: 50px;
+}
+.container {
+  font-size: 1.4rem;
+}
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+    font-size: 1.6rem;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+    font-size: 1.8rem;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
