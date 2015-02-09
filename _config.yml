@@ -8,6 +8,10 @@ url: "http://galen-yip.github.io"
 twitter_username: 
 github_username:  Galen-Yip
 facebook_username: 
+comment: 
+    provider: duoshuo
+    duoshuo: 
+        short_name: galen-yip 
 
 # Build settings
 markdown: kramdown
