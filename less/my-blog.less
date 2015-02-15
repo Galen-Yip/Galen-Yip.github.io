@@ -59,7 +59,8 @@ hr.small {
 // Navigation
 
 .navbar-custom {
-	background: white;
+	background: transparent;
+	border-bottom: 1px solid transparent;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -67,15 +68,41 @@ hr.small {
 	z-index: 3;
 	.sans-serif;
 	.navbar-brand {
+		color: white;
 		font-weight: 800;
+		&:hover{
+			color: @white-faded;
+		}
+	}
+	.navbar-toggle {
+		border-color: transparent;
+		&:hover,
+		&:focus {
+			background-color: transparent;
+			.icon-bar{
+				background-color: @white-faded;
+			}
+		}
+		.icon-bar{
+			background-color: #fff;
+		}
+	}
+	.navbar-collapse {
+		border-color: transparent;
+		background-color: rgba(19, 19, 19, 0.5);
 	}
 	.nav {
 		li {
 			a {
+				color: white;
 				text-transform: uppercase;
 				font-size: 12px;
 				font-weight: 800;
 				letter-spacing: 1px;
+				&:hover,
+				&:focus {
+					color: @white-faded;
+				}
 			}
 		}
 	}
@@ -89,6 +116,9 @@ hr.small {
 			&:focus {
 				color: @white-faded;
 			}
+		}
+		.navbar-collapse {
+			background-color: transparent;
 		}
 		.nav {
 			li {
@@ -163,10 +193,28 @@ hr.small {
 	.background-cover;
 	// NOTE: Background images are set within the HTML using inline CSS!
 	margin-bottom: 50px;
+	.site-avatar{
+		display: none;
+	}
+	@media only screen and (max-width:768px) {
+		.site-avatar{
+			display: block;
+			position: absolute;
+			width: 100px;
+			height: 100px;
+			left: 50%;
+			bottom: 0;
+			margin-left: -50px;
+			margin-bottom: -40px;
+			background-image: url('../img/avatar.png');
+			background-image: -webkit-image-set(url(../img/avatar.png) 1x, url(../img/avatar@2x.png) 2x);
+			background-size: cover;
+		}
+	}
 	.site-heading,
 	.post-heading,
 	.page-heading {
-		padding: 100px 0 50px;
+		padding: 100px 0 100px;
 		color: white;
 		@media only screen and (min-width: 768px) {
 			padding: 150px 0;

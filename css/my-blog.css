@@ -47,7 +47,8 @@ hr.small {
   border-color: white;
 }
 .navbar-custom {
-  background: white;
+  background: transparent;
+  border-bottom: 1px solid transparent;
   position: absolute;
   top: 0;
   left: 0;
@@ -56,13 +57,40 @@ hr.small {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 .navbar-custom .navbar-brand {
+  color: white;
   font-weight: 800;
 }
+.navbar-custom .navbar-brand:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+.navbar-custom .navbar-toggle {
+  border-color: transparent;
+}
+.navbar-custom .navbar-toggle:hover,
+.navbar-custom .navbar-toggle:focus {
+  background-color: transparent;
+}
+.navbar-custom .navbar-toggle:hover .icon-bar,
+.navbar-custom .navbar-toggle:focus .icon-bar {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+.navbar-custom .navbar-toggle .icon-bar {
+  background-color: #fff;
+}
+.navbar-custom .navbar-collapse {
+  border-color: transparent;
+  background-color: rgba(19, 19, 19, 0.5);
+}
 .navbar-custom .nav li a {
+  color: white;
   text-transform: uppercase;
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 1px;
+}
+.navbar-custom .nav li a:hover,
+.navbar-custom .nav li a:focus {
+  color: rgba(255, 255, 255, 0.8);
 }
 @media only screen and (min-width: 768px) {
   .navbar-custom {
@@ -76,6 +104,9 @@ hr.small {
   .navbar-custom .navbar-brand:hover,
   .navbar-custom .navbar-brand:focus {
     color: rgba(255, 255, 255, 0.8);
+  }
+  .navbar-custom .navbar-collapse {
+    background-color: transparent;
   }
   .navbar-custom .nav li a {
     color: white;
@@ -143,10 +174,28 @@ hr.small {
   -o-background-size: cover;
   margin-bottom: 50px;
 }
+.intro-header .site-avatar {
+  display: none;
+}
+@media only screen and (max-width: 768px) {
+  .intro-header .site-avatar {
+    display: block;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    left: 50%;
+    bottom: 0;
+    margin-left: -50px;
+    margin-bottom: -40px;
+    background-image: url('../img/avatar.png');
+    background-image: -webkit-image-set(url(../img/avatar.png) 1x, url(../img/avatar@2x.png) 2x);
+    background-size: cover;
+  }
+}
 .intro-header .site-heading,
 .intro-header .post-heading,
 .intro-header .page-heading {
-  padding: 100px 0 50px;
+  padding: 100px 0 100px;
   color: white;
 }
 @media only screen and (min-width: 768px) {
