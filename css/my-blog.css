@@ -39,6 +39,17 @@ a img:focus {
 blockquote {
   color: #808080;
   font-style: italic;
+  padding: 5px 15px;
+}
+blockquote h1,
+blockquote h2,
+blockquote h3,
+blockquote h4,
+blockquote h5,
+blockquote h6,
+blockquote p {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 hr.small {
   max-width: 100px;
