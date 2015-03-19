@@ -55,10 +55,12 @@ Web组件就是一套封装好的HTML、CSS、Js。
 
 自定义元素。通过`document.registerElement( )`对自定义元素进行注册。该方法返回一个元素的构造器。通过构造器，我们可以创建自定义元素的实例了
 
-```
-  var MyButton = document.registerElement(‘my-button’);
-  document.body.appendChild(new MyButton());
-```
+{% highlight javascript %}
+
+var MyButton = document.registerElement(‘my-button’);
+document.body.appendChild(new MyButton());
+
+{% endhighlight %}
 
 `document.registerElement（tagName, [prototype]）`   是接受2个参数的。
 第二个可选
@@ -66,48 +68,54 @@ Web组件就是一套封装好的HTML、CSS、Js。
 * tagName. 必须包含连字符“-”。这是为了区分自定义元素和HTML规范的元素
 * prototype.可选。用来描述元素的原型。为元素自定义接口
 
-```javascript
-  var MyElement = document.registerElement('my-element', { 
-      prototype: Object.create(HTMLElement.prototype, { 
-          createdCallback: { 
-              value: function() { 
-                  this.innerHTML = "<p>I'm a Custom Element</p>"
-              } 
-          } 
-      }) 
-  });
+{% highlight javascript %}
 
+var MyElement = document.registerElement('my-element', { 
+    prototype: Object.create(HTMLElement.prototype, { 
+        createdCallback: { 
+            value: function() { 
+                this.innerHTML = "<p>I'm a Custom Element</p>"
+            } 
+        } 
+    }) 
+});
+document.body.appendChild(new MyElement());
 
-  document.body.appendChild(new MyElement());
-```
+{% endhighlight %}
 
 其中,`Object.create() `是创建一个继承自 `HTMLElement`原型的对象 作为自定义对象的原型。
 并且设置元素默认的innerHTML
 
 下面的写法跟上面是同一个效果
 
-```javascript
-  var MyElementProto = Object.create(HTMLElement.prototype)
+{% highlight javascript %}
 
-  MyElementProto.createdCallback = function() {
-      this.innerHTML = "<p>I'm a Custom Element</p>"
-  }
+var MyElementProto = Object.create(HTMLElement.prototype)
 
-  var MyElement = document.registerElement('my-element', { prototype: MyElementProto })
+MyElementProto.createdCallback = function() {
+    this.innerHTML = "<p>I'm a Custom Element</p>"
+}
 
-  document.body.appendChild(new MyElement())
-```
+var MyElement = document.registerElement('my-element', { prototype: MyElementProto })
+
+document.body.appendChild(new MyElement())
+
+{% endhighlight %}
+
+
 ---
 
 >#### 对元素的拓展
 
 比如要拓展Button元素
 
-```javascript
-  var MyButton = document.registerElement(‘my-button’, {
-       prototype: Object.create(HTMLButtonElement.prototype)
-  })
-```
+{% highlight javascript %}
+
+var MyButton = document.registerElement(‘my-button’, {
+     prototype: Object.create(HTMLButtonElement.prototype)
+})
+
+{% endhighlight %}
 
 这类的自定义元素被称为类型扩展自定义元素
 使用：
@@ -125,13 +133,15 @@ Web组件就是一套封装好的HTML、CSS、Js。
 
 下面这段代码就给出了答案，两者都是输出true
 
-```javascript
-  // “tabs”不是一个合法的自定义元素名
-  document.createElement('tabs').__proto__ === HTMLUnknownElement.prototype
-   
-  // “x-tabs”是一个合法的自定义元素名
-  document.createElement('x-tabs').__proto__ == HTMLElement.prototype
-```
+{% highlight javascript %}
+
+// “tabs”不是一个合法的自定义元素名
+document.createElement('tabs').__proto__ === HTMLUnknownElement.prototype
+ 
+// “x-tabs”是一个合法的自定义元素名
+document.createElement('x-tabs').__proto__ == HTMLElement.prototype
+
+{% endhighlight %}
 
 
 注意：在不支持`document.registerElement（）`的浏览器，自定义标签是继承自`HTMLUnknownElement`的
@@ -158,10 +168,12 @@ js中：
 
 使用new 构造器
 
-```javascript
-  var xtabs = new Xtabs()
-  document.body.appendChild(xtabs)
-```
+{% highlight javascript %}
+
+var xtabs = new Xtabs()
+document.body.appendChild(xtabs)
+
+{% endhighlight %}
 
 实例化类型扩展元素
 HTML中：
@@ -172,44 +184,48 @@ js中：
 
 
 添加属性和方法
-`var XFooProto = Object.create(HTMLElement.prototype);`
+{% highlight javascript %}
+
+var XFooProto = Object.create(HTMLElement.prototype);
  
 // 1. 为 x-foo 创建 foo() 方法
-```javascript
-  XFooProto.foo = function() {
-    alert('foo() called');
-  };
-```javascript
- 
+XFooProto.foo = function() {
+  alert('foo() called');
+};
+
 // 2. 定义一个只读的“bar”属性
-`Object.defineProperty(XFooProto, "bar", {value: 5});`
+Object.defineProperty(XFooProto, "bar", {value: 5});
  
 // 3. 注册 x-foo 的定义
-`var XFoo = document.registerElement('x-foo', {prototype: XFooProto});`
+var XFoo = document.registerElement('x-foo', {prototype: XFooProto});
  
 // 4. 创建一个 x-foo 实例
-`var xfoo = document.createElement('x-foo');`
+var xfoo = document.createElement('x-foo');
 
 // 5. 插入页面
-`document.body.appendChild(xfoo);`
+document.body.appendChild(xfoo);
+
+{% endhighlight %}
 
 当然最后面的4、5可以用new构造器来创建
 如果不喜欢这种构造prototype的方法，也可以像下面这样写
 
-```javascript
-  var XFoo = document.registerElement('x-foo', {
-    prototype: Object.create(HTMLElement.prototype, {
-      bar: {
-        get: function() { return 5; }
-      },
-      foo: {
-        value: function() {
-          alert('foo() called');
-        }
+{% highlight javascript %}
+
+var XFoo = document.registerElement('x-foo', {
+  prototype: Object.create(HTMLElement.prototype, {
+    bar: {
+      get: function() { return 5; }
+    },
+    foo: {
+      value: function() {
+        alert('foo() called');
       }
-    })
-  });
-```
+    }
+  })
+});
+
+{% endhighlight %}
 
 第一种是直接使用了ES5的`Object.defineProperty`
 第二种使用了`get/set`
@@ -228,45 +244,50 @@ createdCallback、attachCallback、detachedCallback、attributeChangeCallback
 
 DOM:
 
-```javascript
-  <div id="modify">
-    <label class="CEgreen"><input type="radio" name="CEclass" value="green">green box</label>
-    <label class="CEred"><input type="radio" name="CEclass" value="red">red box</label>
-  </div>
-```
+{% highlight html %}
+
+<div id="modify">
+  <label class="CEgreen"><input type="radio" name="CEclass" value="green">green box</label>
+  <label class="CEred"><input type="radio" name="CEclass" value="red">red box</label>
+</div>
+
+{% endhighlight %}
 
 JS:
 
-```javascript
-  var MyElement = document.registerElement('my-element', { 
-    prototype: Object.create(HTMLElement.prototype, { 
-      createdCallback: { 
-        value: function() {
-          this.innerHTML = "<span>I'm a Custom Element</span>"
-        }
-      },
-      attributeChangedCallback: {
-        value: function(property, oldValue, newValue) {
-          this.innerHTML = "attribute '" + property + "' is modified to " + newValue
-        }
+{% highlight javascript %}
+
+var MyElement = document.registerElement('my-element', { 
+  prototype: Object.create(HTMLElement.prototype, { 
+    createdCallback: { 
+      value: function() {
+        this.innerHTML = "<span>I'm a Custom Element</span>"
       }
-    }) 
-  })
-  document.body.appendChild(new MyElement())
+    },
+    attributeChangedCallback: {
+      value: function(property, oldValue, newValue) {
+        this.innerHTML = "attribute '" + property + "' is modified to " + newValue
+      }
+    }
+  }) 
+})
+document.body.appendChild(new MyElement())
 
-  var temp = document.querySelector("#modify")
-  var myElement = document.querySelector("my-element")
+var temp = document.querySelector("#modify")
+var myElement = document.querySelector("my-element")
 
-  temp.addEventListener('click', function(e){
-    console.log(e.target.value)
-    myElement.className = e.target.value
-  })
-```
+temp.addEventListener('click', function(e){
+  console.log(e.target.value)
+  myElement.className = e.target.value
+})
+
+{% endhighlight %}
 
 另外，给自定义元素添加样式和普通元素是一样的，这是上面例子中为自定义元素添加的样式：
 
-
-`my-element {display: inline-block;margin-top: 20px;padding: 10px;font-size: 24px;}`
+{% highlight css %}
+my-element {display: inline-block;margin-top: 20px;padding: 10px;font-size: 24px;}
+{% endhighlight %}
 
 
 如果希望元素内部不受外部样式影响，需要使用Shadow Dom对内部的dom结构和样式进行封装
@@ -283,29 +304,33 @@ Shadow Dom能干什么？
 
 从Shadow Dom创建元素的区别是createdCallback回调
 
-```javascript
-  var XFooProto = Object.create(HTMLElement.prototype);
+{% highlight javascript %}
 
-  XFooProto.createdCallback = function() {
-  // 1. 为元素附加一个 shadow root。
-  var shadow = this.createShadowRoot();
+var XFooProto = Object.create(HTMLElement.prototype);
 
-  // 2. 填入标记。
-  shadow.innerHTML = "<b>I'm in the element's Shadow DOM!</b>";
-  };
+XFooProto.createdCallback = function() {
+// 1. 为元素附加一个 shadow root。
+var shadow = this.createShadowRoot();
 
-  var XFoo = document.registerElement('x-foo-shadowdom', {prototype: XFooProto});
-```
+// 2. 填入标记。
+shadow.innerHTML = "<b>I'm in the element's Shadow DOM!</b>";
+};
+
+var XFoo = document.registerElement('x-foo-shadowdom', {prototype: XFooProto});
+
+{% endhighlight %}
 
 这里我们不是直接为自定义元素设置`innerHTML`
 而是在ShadowRoot上设置，在DevTools中勾选’Show Shadow Dom’ ，就会看到一个展开的# Shadow Root
 
-```html
-  <x-foo-shadowdom>
+{% highlight html %}
+
+<x-foo-shadowdom>
   #shadow-root
   <b>I'm in the element's Shadow DOM!</b>
-  </x-foo-shadowdom>
-```
+</x-foo-shadowdom>
+
+{% endhighlight %}
 
 添加样式
 有了Shadow Dom ，样式的封装就不会影响到宿主外部
@@ -324,15 +349,18 @@ Shadow Dom能干什么？
 
 用法：
 
-```css
-  x-foo {
+{% highlight css %}
+
+x-foo {
   opacity: 1;
   transition: opacity 300ms;
-  }
-  x-foo:unresolved {
+}
+x-foo:unresolved {
   opacity: 0;
-  }
-```
+}
+
+{% endhighlight %}
+
 
 ---
 
@@ -345,27 +373,32 @@ HTML模板是一组跟自定义元素完全融合的新的API
 
 下面是`<template>`和Shadow Dom结合的例子
 
-```javascript
-  <template id="sdtemplate">
-  <style>
+{% highlight css %}
+<template id="sdtemplate">
+<style>
   p { color: orange; }
-  </style>
-  <p>I'm in Shadow DOM. My markup was stamped from a &lt;template&gt;.</p>
-  </template>
+</style>
 
-  <script>
-  var proto = Object.create(HTMLElement.prototype, {
+<p>I'm in Shadow DOM. My markup was stamped from a <template>.</p>
+</template>
+
+{% endhighlight %}
+
+
+{% highlight javascript %}
+
+var proto = Object.create(HTMLElement.prototype, {
   createdCallback: {
   value: function() {
-  var t = document.querySelector('#sdtemplate');
-  var clone = document.importNode(t.content, true);
-  this.createShadowRoot().appendChild(clone);
+    var t = document.querySelector('#sdtemplate');
+    var clone = document.importNode(t.content, true);
+    this.createShadowRoot().appendChild(clone);
+    }
   }
-  }
-  });
-  document.registerElement('x-foo-from-template', {prototype: proto});
-  </script>
-```
+});
+document.registerElement('x-foo-from-template', {prototype: proto});
+
+{% endhighlight %}
 
 以上的流程大体如下：
 
@@ -379,11 +412,13 @@ HTML模板是一组跟自定义元素完全融合的新的API
 
 曾经有一个`<element>`标签，不知道看官们知道不。他十分好用，直接像下面这样就可以注册一个新元素了
 
-```html
-  <element name="my-element">
-  //...
-  </element>
-```
+{% highlight html %}
+
+<element name="my-element">
+//...
+</element>
+
+{% endhighlight %}
 
 然而据说他是因为在提升过程、边界案例、以及各种复杂场景中，需要处理大量的时序问题。最后在2013年8月Dimitri Glazkov在public-webapps 邮件组中宣告移除 `<element>`
 
@@ -400,5 +435,6 @@ HTML模板是一组跟自定义元素完全融合的新的API
 
 
 >#### 推荐阅读
+
 [web组件才是web开发的未来？](http://mobile.51cto.com/web-395159.htm)
 
