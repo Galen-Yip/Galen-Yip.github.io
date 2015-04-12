@@ -161,7 +161,7 @@ em { font-style: normal;}
 }
 
 /* 滑动提示箭头 */
-.arrow{position: fixed; bottom: 50px; left:50%; z-index: 9999; width: 40px; height: 28px; margin-left: -20px;background: url(arrow.png) no-repeat ;-webkit-animation: arrowUp 1.5s infinite ease-in-out;background-size: 100%;}
+.arrow{position: fixed; bottom: 50px; left:50%; z-index: 1999; width: 40px; height: 28px; margin-left: -20px;background: url(arrow.png) no-repeat ;-webkit-animation: arrowUp 1.5s infinite ease-in-out;background-size: 100%;}
 .f-hide{display: none !important;}
 .arrow_v p, .arrow_l, .arrow_r{background: url(theme1.png) no-repeat -98px -71px;}
 .arrow_v{position: fixed; bottom: 30px; left:50%; z-index: 9999; width: 40px; height: 28px; margin-left: -20px; /*background: rgba(160,160,160,0.6); border-radius: 50%;*/}
