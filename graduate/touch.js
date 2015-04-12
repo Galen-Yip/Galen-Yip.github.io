@@ -84,7 +84,7 @@ $(function(){
 	//如果等待超过5秒，不再加载图片,直接显示
 	setTimeout(function(){
 		if(setApp.$loading.css("display") == "block"){
-			// loadComplate();
+			loadComplate();
 		}
 	},5000);
 	
