@@ -86,7 +86,7 @@ $(function(){
 		if(setApp.$loading.css("display") == "block"){
 			loadComplate();
 		}
-	},8000);
+	},5000);
 	
 	//加载剩余的图片
 	var loadOtherImgs = function(){
@@ -132,7 +132,7 @@ $(function(){
 		var imgLoadFun = function(){
 			var setTimeMark = setInterval(function(){
 				if(num == setApp.limit){
-					loadComplate();//清空数组一，释放内存
+					// loadComplate();//清空数组一，释放内存
 					loadOtherImgs(); //加载剩余的图片
 					clearInterval(setTimeMark);
 				}	
