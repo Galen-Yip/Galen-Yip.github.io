@@ -65,7 +65,7 @@ $(function(){
 	var setApp = {
 		$loadnum : $("#loadnum"), //加载的进度条
 		$loading : $("#loading"), //加载的动画
-		$img : $("#coolapp").find("img"),
+		$img : $("#galen-app").find("img"),
 		$page1 : $(".page-1-1"), //第一页动画重置 时 会用到
 		limit : 5, // 限制一次加载的图片个数
 		delayTime : 500 //加载完成后，延迟0.1秒后播放动画
