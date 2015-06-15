@@ -5,9 +5,87 @@
     <description>Galen的Blog, 前端开发工程师</description>
     <link>http://galen-yip.com/</link>
     <atom:link href="http://galen-yip.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 19 Mar 2015 14:47:22 +0800</pubDate>
-    <lastBuildDate>Thu, 19 Mar 2015 14:47:22 +0800</lastBuildDate>
+    <pubDate>Mon, 15 Jun 2015 17:39:12 +0800</pubDate>
+    <lastBuildDate>Mon, 15 Jun 2015 17:39:12 +0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>博客迁移</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;为了更好的检索之类的，现在开始用博客园，传送门：&lt;a href=&quot;http://www.cnblogs.com/galenyip/&quot;&gt;http://www.cnblogs.com/galenyip/&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+</description>
+        <pubDate>Tue, 16 Jun 2015 01:00:00 +0800</pubDate>
+        <link>http://galen-yip.com/2015/06/16/new-blog/</link>
+        <guid isPermaLink="true">http://galen-yip.com/2015/06/16/new-blog/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>HTML5 Canvas</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;基础&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;canvas id=&quot;canvas&quot; width=&quot;400&quot; height=&quot;400&quot;&amp;gt;
+  如果浏览器不支持canvas,你将看到这句话
+&amp;lt;canvas&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;cvs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getElementById&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;canvas&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;canvas&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getContext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;content&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;canvas&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getContext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;2d&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;获取元素的同时还要获取画布的2d绘图环境，如果是3d，则要用webGL&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;绘图的函数&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;canvas中只支持&lt;strong&gt;&lt;em&gt;矩形&lt;/em&gt;&lt;/strong&gt; 这一种图形函数，其他的图形需要自己拼凑&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;fillRect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;//画一个填充的矩形&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;strokeRect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;//画一个只有边框的矩形&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;clearRect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;//清除特定区域矩形内的内容&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://runjs.cn/detail/li5xkfgc&quot;&gt;查看源码&lt;/a&gt;&lt;/p&gt;
+
+&lt;div class=&quot;canvasContainer&quot;&gt;
+  &lt;canvas id=&quot;canvas&quot; width=&quot;200&quot; height=&quot;200&quot;&gt;&lt;/canvas&gt;
+&lt;/div&gt;
+&lt;script&gt;
+function draw(){
+    var oc = document.getElementById(&#39;canvas&#39;);
+    var content = oc.getContext(&#39;2d&#39;);
+    content.beginPath();
+    content.arc(75,75,50,0,Math.PI*2,true);//脸
+    content.moveTo(110,75);
+    content.arc(75,75,35,0,Math.PI,false); //嘴巴
+    content.moveTo(65,65);
+    content.arc(60,65,5,0,Math.PI*2,true); //左眼
+    content.moveTo(95,65);
+    content.arc(90,65,5,0,Math.PI*2,true);//右眼
+    content.stroke();
+  }
+draw();
+&lt;/script&gt;
+
+&lt;blockquote&gt;
+  &lt;h4 id=&quot;section&quot;&gt;推荐阅读&lt;/h4&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://mobile.51cto.com/web-395159.htm&quot;&gt;web组件才是web开发的未来？&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 19 Apr 2015 19:20:00 +0800</pubDate>
+        <link>http://galen-yip.com/2015/04/19/canvas/</link>
+        <guid isPermaLink="true">http://galen-yip.com/2015/04/19/canvas/</guid>
+        
+        
+      </item>
     
       <item>
         <title>Web Component</title>
