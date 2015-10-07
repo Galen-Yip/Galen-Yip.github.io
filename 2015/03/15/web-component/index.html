@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Galen的Blog, 前端开发工程师">
-    <link rel="shortcut icon" href="img/avatar.png">
+    <link rel="shortcut icon" href="http://7xnand.com1.z0.glb.clouddn.com/avatar.png">
 
-    <title>Web Component - Mr.Galen's Blog</title>
+    <title>Web Component - Galen's Blog</title>
 
     <link rel="canonical" href="http://galen-yip.com/2015/03/15/web-component/">
 
@@ -57,7 +57,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">Mr.Galen's Blog</a>
+            <a class="navbar-brand" href="/">Galen's Blog</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -165,7 +165,7 @@ Chrome 31是第一个真正支持新规范的版本
 <p>自定义元素。通过<code>document.registerElement( )</code>对自定义元素进行注册。该方法返回一个元素的构造器。通过构造器，我们可以创建自定义元素的实例了</p>
 
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">MyButton</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">registerElement</span><span class="p">(</span><span class="err">‘</span><span class="nx">my</span><span class="o">-</span><span class="nx">button</span><span class="err">’</span><span class="p">);</span>
-<span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="k">new</span> <span class="nx">MyButton</span><span class="p">());</span></code></pre></div>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="k">new</span> <span class="nx">MyButton</span><span class="p">());</span></code></pre></div>
 
 <p><code>document.registerElement（tagName, [prototype]）</code>   是接受2个参数的。
 第二个可选</p>
@@ -176,15 +176,17 @@ Chrome 31是第一个真正支持新规范的版本
 </ul>
 
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">MyElement</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">registerElement</span><span class="p">(</span><span class="s1">&#39;my-element&#39;</span><span class="p">,</span> <span class="p">{</span> 
-    <span class="nx">prototype</span><span class="o">:</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">HTMLElement</span><span class="p">.</span><span class="nx">prototype</span><span class="p">,</span> <span class="p">{</span> 
-        <span class="nx">createdCallback</span><span class="o">:</span> <span class="p">{</span> 
-            <span class="nx">value</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> 
-                <span class="k">this</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">&quot;&lt;p&gt;I&#39;m a Custom Element&lt;/p&gt;&quot;</span>
-            <span class="p">}</span> 
-        <span class="p">}</span> 
-    <span class="p">})</span> 
-<span class="p">});</span>
-<span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="k">new</span> <span class="nx">MyElement</span><span class="p">());</span></code></pre></div>
+      <span class="nx">prototype</span><span class="o">:</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">HTMLElement</span><span class="p">.</span><span class="nx">prototype</span><span class="p">,</span> <span class="p">{</span> 
+          <span class="nx">createdCallback</span><span class="o">:</span> <span class="p">{</span> 
+              <span class="nx">value</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> 
+                  <span class="k">this</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">&quot;&lt;p&gt;I&#39;m a Custom Element&lt;/p&gt;&quot;</span>
+              <span class="p">}</span> 
+          <span class="p">}</span> 
+      <span class="p">})</span> 
+  <span class="p">});</span>
+
+
+  <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="k">new</span> <span class="nx">MyElement</span><span class="p">());</span></code></pre></div>
 
 <p>其中,<code>Object.create() </code>是创建一个继承自 <code>HTMLElement</code>原型的对象 作为自定义对象的原型。
 并且设置元素默认的innerHTML</p>
@@ -193,13 +195,13 @@ Chrome 31是第一个真正支持新规范的版本
 
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">MyElementProto</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">HTMLElement</span><span class="p">.</span><span class="nx">prototype</span><span class="p">)</span>
 
-<span class="nx">MyElementProto</span><span class="p">.</span><span class="nx">createdCallback</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">&quot;&lt;p&gt;I&#39;m a Custom Element&lt;/p&gt;&quot;</span>
-<span class="p">}</span>
+  <span class="nx">MyElementProto</span><span class="p">.</span><span class="nx">createdCallback</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">&quot;&lt;p&gt;I&#39;m a Custom Element&lt;/p&gt;&quot;</span>
+  <span class="p">}</span>
 
-<span class="kd">var</span> <span class="nx">MyElement</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">registerElement</span><span class="p">(</span><span class="s1">&#39;my-element&#39;</span><span class="p">,</span> <span class="p">{</span> <span class="nx">prototype</span><span class="o">:</span> <span class="nx">MyElementProto</span> <span class="p">})</span>
+  <span class="kd">var</span> <span class="nx">MyElement</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">registerElement</span><span class="p">(</span><span class="s1">&#39;my-element&#39;</span><span class="p">,</span> <span class="p">{</span> <span class="nx">prototype</span><span class="o">:</span> <span class="nx">MyElementProto</span> <span class="p">})</span>
 
-<span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="k">new</span> <span class="nx">MyElement</span><span class="p">())</span></code></pre></div>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="k">new</span> <span class="nx">MyElement</span><span class="p">())</span></code></pre></div>
 
 <hr />
 
@@ -210,8 +212,8 @@ Chrome 31是第一个真正支持新规范的版本
 <p>比如要拓展Button元素</p>
 
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">MyButton</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">registerElement</span><span class="p">(</span><span class="err">‘</span><span class="nx">my</span><span class="o">-</span><span class="nx">button</span><span class="err">’</span><span class="p">,</span> <span class="p">{</span>
-     <span class="nx">prototype</span><span class="o">:</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">HTMLButtonElement</span><span class="p">.</span><span class="nx">prototype</span><span class="p">)</span>
-<span class="p">})</span></code></pre></div>
+       <span class="nx">prototype</span><span class="o">:</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">HTMLButtonElement</span><span class="p">.</span><span class="nx">prototype</span><span class="p">)</span>
+  <span class="p">})</span></code></pre></div>
 
 <p>这类的自定义元素被称为类型扩展自定义元素
 使用：
@@ -232,10 +234,10 @@ Chrome 31是第一个真正支持新规范的版本
 <p>下面这段代码就给出了答案，两者都是输出true</p>
 
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// “tabs”不是一个合法的自定义元素名</span>
-<span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;tabs&#39;</span><span class="p">).</span><span class="nx">__proto__</span> <span class="o">===</span> <span class="nx">HTMLUnknownElement</span><span class="p">.</span><span class="nx">prototype</span>
- 
-<span class="c1">// “x-tabs”是一个合法的自定义元素名</span>
-<span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;x-tabs&#39;</span><span class="p">).</span><span class="nx">__proto__</span> <span class="o">==</span> <span class="nx">HTMLElement</span><span class="p">.</span><span class="nx">prototype</span></code></pre></div>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;tabs&#39;</span><span class="p">).</span><span class="nx">__proto__</span> <span class="o">===</span> <span class="nx">HTMLUnknownElement</span><span class="p">.</span><span class="nx">prototype</span>
+   
+  <span class="c1">// “x-tabs”是一个合法的自定义元素名</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;x-tabs&#39;</span><span class="p">).</span><span class="nx">__proto__</span> <span class="o">==</span> <span class="nx">HTMLElement</span><span class="p">.</span><span class="nx">prototype</span></code></pre></div>
 
 <p>注意：在不支持<code>document.registerElement（）</code>的浏览器，自定义标签是继承自<code>HTMLUnknownElement</code>的</p>
 
@@ -264,7 +266,7 @@ HTML中：
 <p>使用new 构造器</p>
 
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">xtabs</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Xtabs</span><span class="p">()</span>
-<span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">xtabs</span><span class="p">)</span></code></pre></div>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">xtabs</span><span class="p">)</span></code></pre></div>
 
 <p>实例化类型扩展元素
 HTML中：
@@ -273,42 +275,42 @@ HTML中：
 <p>js中：
 <code>var button = document.createElement(‘button’, ‘my-button’)</code></p>
 
-<p>添加属性和方法</p>
+<p>添加属性和方法
+<code>var XFooProto = Object.create(HTMLElement.prototype);</code></p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">XFooProto</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">HTMLElement</span><span class="p">.</span><span class="nx">prototype</span><span class="p">);</span>
- 
-<span class="c1">// 1. 为 x-foo 创建 foo() 方法</span>
-<span class="nx">XFooProto</span><span class="p">.</span><span class="nx">foo</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;foo() called&#39;</span><span class="p">);</span>
-<span class="p">};</span>
+<p>// 1. 为 x-foo 创建 foo() 方法</p>
 
-<span class="c1">// 2. 定义一个只读的“bar”属性</span>
-<span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nx">XFooProto</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">,</span> <span class="p">{</span><span class="nx">value</span><span class="o">:</span> <span class="mi">5</span><span class="p">});</span>
- 
-<span class="c1">// 3. 注册 x-foo 的定义</span>
-<span class="kd">var</span> <span class="nx">XFoo</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">registerElement</span><span class="p">(</span><span class="s1">&#39;x-foo&#39;</span><span class="p">,</span> <span class="p">{</span><span class="nx">prototype</span><span class="o">:</span> <span class="nx">XFooProto</span><span class="p">});</span>
- 
-<span class="c1">// 4. 创建一个 x-foo 实例</span>
-<span class="kd">var</span> <span class="nx">xfoo</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;x-foo&#39;</span><span class="p">);</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">XFooProto</span><span class="p">.</span><span class="nx">foo</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;foo() called&#39;</span><span class="p">);</span>
+  <span class="p">};</span></code></pre></div>
 
-<span class="c1">// 5. 插入页面</span>
-<span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">xfoo</span><span class="p">);</span></code></pre></div>
+<p>// 2. 定义一个只读的“bar”属性
+<code>Object.defineProperty(XFooProto, "bar", {value: 5});</code></p>
+
+<p>// 3. 注册 x-foo 的定义
+<code>var XFoo = document.registerElement('x-foo', {prototype: XFooProto});</code></p>
+
+<p>// 4. 创建一个 x-foo 实例
+<code>var xfoo = document.createElement('x-foo');</code></p>
+
+<p>// 5. 插入页面
+<code>document.body.appendChild(xfoo);</code></p>
 
 <p>当然最后面的4、5可以用new构造器来创建
 如果不喜欢这种构造prototype的方法，也可以像下面这样写</p>
 
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">XFoo</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">registerElement</span><span class="p">(</span><span class="s1">&#39;x-foo&#39;</span><span class="p">,</span> <span class="p">{</span>
-  <span class="nx">prototype</span><span class="o">:</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">HTMLElement</span><span class="p">.</span><span class="nx">prototype</span><span class="p">,</span> <span class="p">{</span>
-    <span class="nx">bar</span><span class="o">:</span> <span class="p">{</span>
-      <span class="nx">get</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="mi">5</span><span class="p">;</span> <span class="p">}</span>
-    <span class="p">},</span>
-    <span class="nx">foo</span><span class="o">:</span> <span class="p">{</span>
-      <span class="nx">value</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-        <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;foo() called&#39;</span><span class="p">);</span>
+    <span class="nx">prototype</span><span class="o">:</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">HTMLElement</span><span class="p">.</span><span class="nx">prototype</span><span class="p">,</span> <span class="p">{</span>
+      <span class="nx">bar</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">get</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="mi">5</span><span class="p">;</span> <span class="p">}</span>
+      <span class="p">},</span>
+      <span class="nx">foo</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">value</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+          <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;foo() called&#39;</span><span class="p">);</span>
+        <span class="p">}</span>
       <span class="p">}</span>
-    <span class="p">}</span>
-  <span class="p">})</span>
-<span class="p">});</span></code></pre></div>
+    <span class="p">})</span>
+  <span class="p">});</span></code></pre></div>
 
 <p>第一种是直接使用了ES5的<code>Object.defineProperty</code>
 第二种使用了<code>get/set</code></p>
@@ -329,40 +331,40 @@ HTML中：
 
 <p>DOM:</p>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;modify&quot;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;CEgreen&quot;</span><span class="nt">&gt;&lt;input</span> <span class="na">type=</span><span class="s">&quot;radio&quot;</span> <span class="na">name=</span><span class="s">&quot;CEclass&quot;</span> <span class="na">value=</span><span class="s">&quot;green&quot;</span><span class="nt">&gt;</span>green box<span class="nt">&lt;/label&gt;</span>
-  <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;CEred&quot;</span><span class="nt">&gt;&lt;input</span> <span class="na">type=</span><span class="s">&quot;radio&quot;</span> <span class="na">name=</span><span class="s">&quot;CEclass&quot;</span> <span class="na">value=</span><span class="s">&quot;red&quot;</span><span class="nt">&gt;</span>red box<span class="nt">&lt;/label&gt;</span>
-<span class="nt">&lt;/div&gt;</span></code></pre></div>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">div</span> <span class="nx">id</span><span class="o">=</span><span class="s2">&quot;modify&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">label</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;CEgreen&quot;</span><span class="o">&gt;&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;radio&quot;</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;CEclass&quot;</span> <span class="nx">value</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="o">&gt;</span><span class="nx">green</span> <span class="nx">box</span><span class="o">&lt;</span><span class="err">/label&gt;</span>
+    <span class="o">&lt;</span><span class="nx">label</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;CEred&quot;</span><span class="o">&gt;&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;radio&quot;</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;CEclass&quot;</span> <span class="nx">value</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="o">&gt;</span><span class="nx">red</span> <span class="nx">box</span><span class="o">&lt;</span><span class="err">/label&gt;</span>
+  <span class="o">&lt;</span><span class="err">/div&gt;</span></code></pre></div>
 
 <p>JS:</p>
 
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">MyElement</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">registerElement</span><span class="p">(</span><span class="s1">&#39;my-element&#39;</span><span class="p">,</span> <span class="p">{</span> 
-  <span class="nx">prototype</span><span class="o">:</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">HTMLElement</span><span class="p">.</span><span class="nx">prototype</span><span class="p">,</span> <span class="p">{</span> 
-    <span class="nx">createdCallback</span><span class="o">:</span> <span class="p">{</span> 
-      <span class="nx">value</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">&quot;&lt;span&gt;I&#39;m a Custom Element&lt;/span&gt;&quot;</span>
+    <span class="nx">prototype</span><span class="o">:</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">HTMLElement</span><span class="p">.</span><span class="nx">prototype</span><span class="p">,</span> <span class="p">{</span> 
+      <span class="nx">createdCallback</span><span class="o">:</span> <span class="p">{</span> 
+        <span class="nx">value</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+          <span class="k">this</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">&quot;&lt;span&gt;I&#39;m a Custom Element&lt;/span&gt;&quot;</span>
+        <span class="p">}</span>
+      <span class="p">},</span>
+      <span class="nx">attributeChangedCallback</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">value</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">property</span><span class="p">,</span> <span class="nx">oldValue</span><span class="p">,</span> <span class="nx">newValue</span><span class="p">)</span> <span class="p">{</span>
+          <span class="k">this</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">&quot;attribute &#39;&quot;</span> <span class="o">+</span> <span class="nx">property</span> <span class="o">+</span> <span class="s2">&quot;&#39; is modified to &quot;</span> <span class="o">+</span> <span class="nx">newValue</span>
+        <span class="p">}</span>
       <span class="p">}</span>
-    <span class="p">},</span>
-    <span class="nx">attributeChangedCallback</span><span class="o">:</span> <span class="p">{</span>
-      <span class="nx">value</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">property</span><span class="p">,</span> <span class="nx">oldValue</span><span class="p">,</span> <span class="nx">newValue</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">&quot;attribute &#39;&quot;</span> <span class="o">+</span> <span class="nx">property</span> <span class="o">+</span> <span class="s2">&quot;&#39; is modified to &quot;</span> <span class="o">+</span> <span class="nx">newValue</span>
-      <span class="p">}</span>
-    <span class="p">}</span>
-  <span class="p">})</span> 
-<span class="p">})</span>
-<span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="k">new</span> <span class="nx">MyElement</span><span class="p">())</span>
+    <span class="p">})</span> 
+  <span class="p">})</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="k">new</span> <span class="nx">MyElement</span><span class="p">())</span>
 
-<span class="kd">var</span> <span class="nx">temp</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;#modify&quot;</span><span class="p">)</span>
-<span class="kd">var</span> <span class="nx">myElement</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;my-element&quot;</span><span class="p">)</span>
+  <span class="kd">var</span> <span class="nx">temp</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;#modify&quot;</span><span class="p">)</span>
+  <span class="kd">var</span> <span class="nx">myElement</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;my-element&quot;</span><span class="p">)</span>
 
-<span class="nx">temp</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span>
-  <span class="nx">myElement</span><span class="p">.</span><span class="nx">className</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span>
-<span class="p">})</span></code></pre></div>
+  <span class="nx">temp</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span>
+    <span class="nx">myElement</span><span class="p">.</span><span class="nx">className</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span>
+  <span class="p">})</span></code></pre></div>
 
 <p>另外，给自定义元素添加样式和普通元素是一样的，这是上面例子中为自定义元素添加的样式：</p>
 
-<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">my-element</span> <span class="p">{</span><span class="k">display</span><span class="o">:</span> <span class="k">inline</span><span class="o">-</span><span class="k">block</span><span class="p">;</span><span class="k">margin-top</span><span class="o">:</span> <span class="m">20px</span><span class="p">;</span><span class="k">padding</span><span class="o">:</span> <span class="m">10px</span><span class="p">;</span><span class="k">font-size</span><span class="o">:</span> <span class="m">24px</span><span class="p">;}</span></code></pre></div>
+<p><code>my-element {display: inline-block;margin-top: 20px;padding: 10px;font-size: 24px;}</code></p>
 
 <p>如果希望元素内部不受外部样式影响，需要使用Shadow Dom对内部的dom结构和样式进行封装</p>
 
@@ -384,15 +386,15 @@ HTML中：
 
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">XFooProto</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">HTMLElement</span><span class="p">.</span><span class="nx">prototype</span><span class="p">);</span>
 
-<span class="nx">XFooProto</span><span class="p">.</span><span class="nx">createdCallback</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-<span class="c1">// 1. 为元素附加一个 shadow root。</span>
-<span class="kd">var</span> <span class="nx">shadow</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">createShadowRoot</span><span class="p">();</span>
+  <span class="nx">XFooProto</span><span class="p">.</span><span class="nx">createdCallback</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// 1. 为元素附加一个 shadow root。</span>
+  <span class="kd">var</span> <span class="nx">shadow</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">createShadowRoot</span><span class="p">();</span>
 
-<span class="c1">// 2. 填入标记。</span>
-<span class="nx">shadow</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">&quot;&lt;b&gt;I&#39;m in the element&#39;s Shadow DOM!&lt;/b&gt;&quot;</span><span class="p">;</span>
-<span class="p">};</span>
+  <span class="c1">// 2. 填入标记。</span>
+  <span class="nx">shadow</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">&quot;&lt;b&gt;I&#39;m in the element&#39;s Shadow DOM!&lt;/b&gt;&quot;</span><span class="p">;</span>
+  <span class="p">};</span>
 
-<span class="kd">var</span> <span class="nx">XFoo</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">registerElement</span><span class="p">(</span><span class="s1">&#39;x-foo-shadowdom&#39;</span><span class="p">,</span> <span class="p">{</span><span class="nx">prototype</span><span class="o">:</span> <span class="nx">XFooProto</span><span class="p">});</span></code></pre></div>
+  <span class="kd">var</span> <span class="nx">XFoo</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">registerElement</span><span class="p">(</span><span class="s1">&#39;x-foo-shadowdom&#39;</span><span class="p">,</span> <span class="p">{</span><span class="nx">prototype</span><span class="o">:</span> <span class="nx">XFooProto</span><span class="p">});</span></code></pre></div>
 
 <p>这里我们不是直接为自定义元素设置<code>innerHTML</code>
 而是在ShadowRoot上设置，在DevTools中勾选’Show Shadow Dom’ ，就会看到一个展开的# Shadow Root</p>
@@ -400,7 +402,7 @@ HTML中：
 <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;x-foo-shadowdom&gt;</span>
   #shadow-root
   <span class="nt">&lt;b&gt;</span>I&#39;m in the element&#39;s Shadow DOM!<span class="nt">&lt;/b&gt;</span>
-<span class="nt">&lt;/x-foo-shadowdom&gt;</span></code></pre></div>
+  <span class="nt">&lt;/x-foo-shadowdom&gt;</span></code></pre></div>
 
 <p>添加样式
 有了Shadow Dom ，样式的封装就不会影响到宿主外部
@@ -422,10 +424,10 @@ HTML中：
 <div class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">x-foo</span> <span class="p">{</span>
   <span class="k">opacity</span><span class="o">:</span> <span class="m">1</span><span class="p">;</span>
   <span class="n">transition</span><span class="o">:</span> <span class="k">opacity</span> <span class="m">300</span><span class="n">ms</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nt">x-foo</span><span class="nd">:unresolved</span> <span class="p">{</span>
+  <span class="p">}</span>
+  <span class="nt">x-foo</span><span class="nd">:unresolved</span> <span class="p">{</span>
   <span class="k">opacity</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
-<span class="p">}</span></code></pre></div>
+  <span class="p">}</span></code></pre></div>
 
 <hr />
 
@@ -440,24 +442,25 @@ HTML中：
 
 <p>下面是<code>&lt;template&gt;</code>和Shadow Dom结合的例子</p>
 
-<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="o">&lt;</span><span class="nt">template</span> <span class="nt">id</span><span class="o">=</span><span class="s2">&quot;sdtemplate&quot;</span><span class="o">&gt;</span>
-<span class="o">&lt;</span><span class="nt">style</span><span class="o">&gt;</span>
-  <span class="nt">p</span> <span class="p">{</span> <span class="k">color</span><span class="o">:</span> <span class="nb">orange</span><span class="p">;</span> <span class="p">}</span>
-<span class="o">&lt;/</span><span class="nt">style</span><span class="o">&gt;</span>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;template</span> <span class="na">id=</span><span class="s">&quot;sdtemplate&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;style&gt;</span>
+    <span class="nt">p</span> <span class="p">{</span> <span class="k">color</span><span class="o">:</span> <span class="nb">orange</span><span class="p">;</span> <span class="p">}</span>
+    <span class="nt">&lt;/style&gt;</span>
+    <span class="nt">&lt;p&gt;</span>I&#39;m in Shadow DOM. My markup was stamped from a <span class="ni">&amp;lt;</span>template<span class="ni">&amp;gt;</span>.<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/template&gt;</span>
 
-<span class="o">&lt;</span><span class="nt">p</span><span class="o">&gt;</span><span class="nt">I</span><span class="err">&#39;</span><span class="nt">m</span> <span class="nt">in</span> <span class="nt">Shadow</span> <span class="nt">DOM</span><span class="o">.</span> <span class="nt">My</span> <span class="nt">markup</span> <span class="nt">was</span> <span class="nt">stamped</span> <span class="nt">from</span> <span class="nt">a</span> <span class="o">&lt;</span><span class="nt">template</span><span class="o">&gt;.&lt;/</span><span class="nt">p</span><span class="o">&gt;</span>
-<span class="o">&lt;/</span><span class="nt">template</span><span class="o">&gt;</span></code></pre></div>
-
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">proto</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">HTMLElement</span><span class="p">.</span><span class="nx">prototype</span><span class="p">,</span> <span class="p">{</span>
-  <span class="nx">createdCallback</span><span class="o">:</span> <span class="p">{</span>
-  <span class="nx">value</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">t</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#sdtemplate&#39;</span><span class="p">);</span>
-    <span class="kd">var</span> <span class="nx">clone</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">importNode</span><span class="p">(</span><span class="nx">t</span><span class="p">.</span><span class="nx">content</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">createShadowRoot</span><span class="p">().</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">clone</span><span class="p">);</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-<span class="p">});</span>
-<span class="nb">document</span><span class="p">.</span><span class="nx">registerElement</span><span class="p">(</span><span class="s1">&#39;x-foo-from-template&#39;</span><span class="p">,</span> <span class="p">{</span><span class="nx">prototype</span><span class="o">:</span> <span class="nx">proto</span><span class="p">});</span></code></pre></div>
+  <span class="nt">&lt;script&gt;</span>
+    <span class="kd">var</span> <span class="nx">proto</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">HTMLElement</span><span class="p">.</span><span class="nx">prototype</span><span class="p">,</span> <span class="p">{</span>
+      <span class="nx">createdCallback</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">value</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+          <span class="kd">var</span> <span class="nx">t</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#sdtemplate&#39;</span><span class="p">);</span>
+          <span class="kd">var</span> <span class="nx">clone</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">importNode</span><span class="p">(</span><span class="nx">t</span><span class="p">.</span><span class="nx">content</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+          <span class="k">this</span><span class="p">.</span><span class="nx">createShadowRoot</span><span class="p">().</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">clone</span><span class="p">);</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">});</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">registerElement</span><span class="p">(</span><span class="s1">&#39;x-foo-from-template&#39;</span><span class="p">,</span> <span class="p">{</span><span class="nx">prototype</span><span class="o">:</span> <span class="nx">proto</span><span class="p">});</span>
+  <span class="nt">&lt;/script&gt;</span></code></pre></div>
 
 <p>以上的流程大体如下：</p>
 
@@ -476,8 +479,8 @@ HTML中：
 <p>曾经有一个<code>&lt;element&gt;</code>标签，不知道看官们知道不。他十分好用，直接像下面这样就可以注册一个新元素了</p>
 
 <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">&quot;my-element&quot;</span><span class="nt">&gt;</span>
-//...
-<span class="nt">&lt;/element&gt;</span></code></pre></div>
+  //...
+  <span class="nt">&lt;/element&gt;</span></code></pre></div>
 
 <p>然而据说他是因为在提升过程、边界案例、以及各种复杂场景中，需要处理大量的时序问题。最后在2013年8月Dimitri Glazkov在public-webapps 邮件组中宣告移除 <code>&lt;element&gt;</code></p>
 
@@ -495,9 +498,8 @@ HTML中：
 
 <blockquote>
   <h4 id="section-7">推荐阅读</h4>
+  <p><a href="http://mobile.51cto.com/web-395159.htm">web组件才是web开发的未来？</a></p>
 </blockquote>
-
-<p><a href="http://mobile.51cto.com/web-395159.htm">web组件才是web开发的未来？</a></p>
 
 
 
@@ -511,7 +513,7 @@ HTML中：
                     
                     
                     <li class="next">
-                        <a href="/2015/04/19/canvas/" data-toggle="tooltip" data-placement="top" title="HTML5 Canvas">Next Post &rarr;</a>
+                        <a href="/2015/10/07/%E3%80%90%E8%AF%91%E3%80%91%E4%BD%BF%E7%94%A8requestIdleCallback/" data-toggle="tooltip" data-placement="top" title="【译】使用requestIdleCallback">Next Post &rarr;</a>
                     </li>
                     
                 </ul>
