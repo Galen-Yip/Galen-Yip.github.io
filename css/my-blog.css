@@ -198,8 +198,8 @@ hr.small {
     bottom: 0;
     margin-left: -50px;
     margin-bottom: -40px;
-    background-image: url('../img/avatar.png');
-    background-image: -webkit-image-set(url(../img/avatar.png) 1x, url(../img/avatar@2x.png) 2x);
+    background-image: url('http://7xnand.com1.z0.glb.clouddn.com/avatar.png');
+    background-image: -webkit-image-set(url(http://7xnand.com1.z0.glb.clouddn.com/avatar.png) 1x, url(http://7xnand.com1.z0.glb.clouddn.com/avatar@2x.png) 2x);
     background-size: cover;
   }
 }
