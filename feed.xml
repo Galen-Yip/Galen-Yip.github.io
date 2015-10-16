@@ -5,9 +5,44 @@
     <description>Galen-Yip&#39;s blog,前端开发,设计,前端开发工程师</description>
     <link>http://galen-yip.com/</link>
     <atom:link href="http://galen-yip.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Fri, 16 Oct 2015 10:44:29 +0800</pubDate>
-    <lastBuildDate>Fri, 16 Oct 2015 10:44:29 +0800</lastBuildDate>
+    <pubDate>Fri, 16 Oct 2015 11:50:52 +0800</pubDate>
+    <lastBuildDate>Fri, 16 Oct 2015 11:50:52 +0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>【前端福利】chrome46的更新</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;昨天更新了下chrome，在mac和windows下都能更到46.0.2490.71版本。今天看到一个令人惊喜的更新。不说了，上图。。。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://7xnand.com1.z0.glb.clouddn.com/chrome-update-01.png&quot; alt=&quot;调色板&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;这个调色板进行了更新，集成了取色管和常用色的使用。点击鼠标处可以看到&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://7xnand.com1.z0.glb.clouddn.com/chrome-update-02.png&quot; alt=&quot;调色板&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;有三种方式刻意选择：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;页面中有的颜色，这个很棒&lt;/li&gt;
+  &lt;li&gt;material design的使用色，这个太棒&lt;/li&gt;
+  &lt;li&gt;用户自定义颜色&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;  &lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;好了，仅此表示兴奋，文章太短，莫怪。&lt;br /&gt;
+向谷歌致敬。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+</description>
+        <pubDate>Fri, 16 Oct 2015 18:30:00 +0800</pubDate>
+        <link>http://galen-yip.com/2015/10/16/%E5%89%8D%E7%AB%AF%E7%A6%8F%E5%88%A9%E2%80%94%E2%80%94chrome46%E7%9A%84%E6%9B%B4%E6%96%B0/</link>
+        <guid isPermaLink="true">http://galen-yip.com/2015/10/16/%E5%89%8D%E7%AB%AF%E7%A6%8F%E5%88%A9%E2%80%94%E2%80%94chrome46%E7%9A%84%E6%9B%B4%E6%96%B0/</guid>
+        
+        
+      </item>
     
       <item>
         <title>【前端福利】chrome46的更新</title>
