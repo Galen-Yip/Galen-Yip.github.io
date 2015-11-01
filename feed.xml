@@ -5,8 +5,8 @@
     <description>Galen-Yip&#39;s blog,前端开发,设计,前端开发工程师</description>
     <link>http://galen-yip.com/</link>
     <atom:link href="http://galen-yip.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 02 Nov 2015 01:35:26 +0800</pubDate>
-    <lastBuildDate>Mon, 02 Nov 2015 01:35:26 +0800</lastBuildDate>
+    <pubDate>Mon, 02 Nov 2015 07:51:21 +0800</pubDate>
+    <lastBuildDate>Mon, 02 Nov 2015 07:51:21 +0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -155,9 +155,9 @@ idle观察者优先于io观察者，io观察者优先于check观察者&lt;/p&gt;
 &lt;h3 id=&quot;br&quot;&gt;参考：&lt;br /&gt;&lt;/h3&gt;
 &lt;blockquote&gt;
 
-  &lt;p&gt;[1] &lt;a href=&quot;http://stackoverflow.com/a/28161894/5485774&quot;&gt;http://stackoverflow.com/a/28161894/5485774&lt;/a&gt;&lt;br /&gt;
-[2] &lt;a href=&quot;http://www.zhihu.com/question/23028843/answer/34594257&quot;&gt;http://www.zhihu.com/question/23028843/answer/34594257&lt;/a&gt;&lt;br /&gt;
-[3] &lt;a href=&quot;https://nodejs.org/api/process.html#process_process_nexttick_callback_arg&quot;&gt;https://nodejs.org/api/process.html#process_process_nexttick_callback_arg&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;[1] &lt;a href=&quot;http://stackoverflow.com/a/28161894/5485774&quot;&gt;http://stackoverflow.com/…&lt;/a&gt;&lt;br /&gt;
+[2] &lt;a href=&quot;http://www.zhihu.com/question/23028843/answer/34594257&quot;&gt;http://www.zhihu.com/…&lt;/a&gt;&lt;br /&gt;
+[3] &lt;a href=&quot;https://nodejs.org/api/process.html#process_process_nexttick_callback_arg&quot;&gt;https://nodejs.org/api/…&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 </description>
