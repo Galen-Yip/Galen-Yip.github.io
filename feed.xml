@@ -5,8 +5,8 @@
     <description>Galen-Yip&#39;s blog,前端开发,设计,前端开发工程师</description>
     <link>http://galen-yip.com/</link>
     <atom:link href="http://galen-yip.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 15 Nov 2015 01:47:29 +0800</pubDate>
-    <lastBuildDate>Sun, 15 Nov 2015 01:47:29 +0800</lastBuildDate>
+    <pubDate>Mon, 16 Nov 2015 01:16:37 +0800</pubDate>
+    <lastBuildDate>Mon, 16 Nov 2015 01:16:37 +0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -162,9 +162,11 @@ idle观察者优先于io观察者，io观察者优先于check观察者&lt;/p&gt;
 
 </description>
         <pubDate>Mon, 02 Nov 2015 09:30:00 +0800</pubDate>
-        <link>http://galen-yip.com/2015/11/02/An-experience-about-maximum-call-stack-error/</link>
-        <guid isPermaLink="true">http://galen-yip.com/2015/11/02/An-experience-about-maximum-call-stack-error/</guid>
+        <link>http://galen-yip.com/nodejs/2015/11/02/An-experience-about-maximum-call-stack-error/</link>
+        <guid isPermaLink="true">http://galen-yip.com/nodejs/2015/11/02/An-experience-about-maximum-call-stack-error/</guid>
         
+        
+        <category>nodejs</category>
         
       </item>
     
@@ -197,9 +199,11 @@ idle观察者优先于io观察者，io观察者优先于check观察者&lt;/p&gt;
 
 </description>
         <pubDate>Fri, 16 Oct 2015 18:30:00 +0800</pubDate>
-        <link>http://galen-yip.com/2015/10/16/%E3%80%90%E5%89%8D%E7%AB%AF%E7%A6%8F%E5%88%A9%E3%80%91chrome46%E7%9A%84%E6%9B%B4%E6%96%B0/</link>
-        <guid isPermaLink="true">http://galen-yip.com/2015/10/16/%E3%80%90%E5%89%8D%E7%AB%AF%E7%A6%8F%E5%88%A9%E3%80%91chrome46%E7%9A%84%E6%9B%B4%E6%96%B0/</guid>
+        <link>http://galen-yip.com/javascript/2015/10/16/%E3%80%90%E5%89%8D%E7%AB%AF%E7%A6%8F%E5%88%A9%E3%80%91chrome46%E7%9A%84%E6%9B%B4%E6%96%B0/</link>
+        <guid isPermaLink="true">http://galen-yip.com/javascript/2015/10/16/%E3%80%90%E5%89%8D%E7%AB%AF%E7%A6%8F%E5%88%A9%E3%80%91chrome46%E7%9A%84%E6%9B%B4%E6%96%B0/</guid>
         
+        
+        <category>javascript</category>
         
       </item>
     
@@ -455,9 +459,13 @@ idle观察者优先于io观察者，io观察者优先于check观察者&lt;/p&gt;
 
 </description>
         <pubDate>Wed, 07 Oct 2015 01:00:00 +0800</pubDate>
-        <link>http://galen-yip.com/2015/10/07/%E3%80%90%E8%AF%91%E3%80%91%E4%BD%BF%E7%94%A8requestIdleCallback/</link>
-        <guid isPermaLink="true">http://galen-yip.com/2015/10/07/%E3%80%90%E8%AF%91%E3%80%91%E4%BD%BF%E7%94%A8requestIdleCallback/</guid>
+        <link>http://galen-yip.com/%E7%BF%BB%E8%AF%91/javascript/2015/10/07/%E3%80%90%E8%AF%91%E3%80%91%E4%BD%BF%E7%94%A8requestIdleCallback/</link>
+        <guid isPermaLink="true">http://galen-yip.com/%E7%BF%BB%E8%AF%91/javascript/2015/10/07/%E3%80%90%E8%AF%91%E3%80%91%E4%BD%BF%E7%94%A8requestIdleCallback/</guid>
         
+        
+        <category>翻译</category>
+        
+        <category>javascript</category>
         
       </item>
     
@@ -860,9 +868,11 @@ HTML中：
 
 </description>
         <pubDate>Sun, 15 Mar 2015 23:58:00 +0800</pubDate>
-        <link>http://galen-yip.com/2015/03/15/web-component/</link>
-        <guid isPermaLink="true">http://galen-yip.com/2015/03/15/web-component/</guid>
+        <link>http://galen-yip.com/web/2015/03/15/web-component/</link>
+        <guid isPermaLink="true">http://galen-yip.com/web/2015/03/15/web-component/</guid>
         
+        
+        <category>web</category>
         
       </item>
     
@@ -921,9 +931,11 @@ HTML中：
 &lt;p&gt;&lt;strong&gt;未来的这一年，应该是自己人生最最最重要的一年了。一切的开始，一些的结束。&lt;/strong&gt;&lt;/p&gt;
 </description>
         <pubDate>Sat, 28 Feb 2015 07:58:00 +0800</pubDate>
-        <link>http://galen-yip.com/2015/02/28/new-year-submit/</link>
-        <guid isPermaLink="true">http://galen-yip.com/2015/02/28/new-year-submit/</guid>
+        <link>http://galen-yip.com/%E4%B8%AA%E4%BA%BA%E9%97%B2%E6%9D%82/2015/02/28/new-year-submit/</link>
+        <guid isPermaLink="true">http://galen-yip.com/%E4%B8%AA%E4%BA%BA%E9%97%B2%E6%9D%82/2015/02/28/new-year-submit/</guid>
         
+        
+        <category>个人闲杂</category>
         
       </item>
     
@@ -935,9 +947,11 @@ HTML中：
 &lt;p&gt;就这些废话。github第一步，攻城师纸尿布。&lt;/p&gt;
 </description>
         <pubDate>Fri, 06 Feb 2015 07:58:00 +0800</pubDate>
-        <link>http://galen-yip.com/2015/02/06/first-passage/</link>
-        <guid isPermaLink="true">http://galen-yip.com/2015/02/06/first-passage/</guid>
+        <link>http://galen-yip.com/%E4%B8%AA%E4%BA%BA%E9%97%B2%E6%9D%82/2015/02/06/first-passage/</link>
+        <guid isPermaLink="true">http://galen-yip.com/%E4%B8%AA%E4%BA%BA%E9%97%B2%E6%9D%82/2015/02/06/first-passage/</guid>
         
+        
+        <category>个人闲杂</category>
         
       </item>
     
