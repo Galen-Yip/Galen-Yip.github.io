@@ -1,0 +1,24 @@
+# Site settings
+title: Galen's Blog
+header-img: "home-bg.jpg"
+email: 275497985@qq.com
+keywords: "Galen-Yip,galen,前端开发,前端,F2E"
+description: "Galen-Yip's blog,前端开发,设计,前端开发工程师"
+baseurl: ""
+cdnurl: "http://7xnand.com1.z0.glb.clouddn.com"
+url: "http://galen-yip.com"
+icon: "http://7xnand.com1.z0.glb.clouddn.com/avatar.png"
+twitter_username: 
+github_username:  Galen-Yip
+facebook_username: 
+comment: 
+    provider: duoshuo
+    duoshuo: 
+        short_name: galen-yip 
+
+# Build settings
+markdown: kramdown
+highlighter: pygments
+permalink: pretty
+paginate: 5
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]

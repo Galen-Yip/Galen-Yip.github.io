@@ -1,0 +1,34 @@
+---
+layout:     post
+title:      "【前端福利】chrome46的更新"
+subtitle:   ""
+date:       2015-10-16 10:30:00
+author:     "Galen"
+header-img: "post-bg-05.jpg"
+categories: [javascript]
+---  
+
+> 昨天更新了下chrome，在mac和windows下都能更到46.0.2490.71版本。今天看到一个令人惊喜的更新。不说了，上图。。。
+
+![调色板]({{ site.cdnurl }}/chrome-update-01.png)
+
+这个调色板进行了更新，集成了取色管和常用色的使用。点击鼠标处可以看到
+
+![调色板]({{ site.cdnurl }}/chrome-update-02.png)
+
+有三种方式刻意选择：
+
+* 页面中有的颜色，这个很棒
+* material design的使用色，这个太棒
+* 用户自定义颜色
+
+<br>  
+
+> 好了，仅此表示兴奋，文章太短，莫怪。  
+谷歌致敬。
+
+
+
+
+
+
