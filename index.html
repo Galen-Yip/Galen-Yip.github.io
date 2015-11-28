@@ -15,7 +15,9 @@ description: "Be an elegant Geek"
         {% endif %}
     </a>
     <p class="post-meta">Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}</p>
-    <p class="post-description">{{ post.description }}</p>
+    <a href="{{ post.url | prepend: site.baseurl }}">
+    <p class="post-description">{{ post.description }} </p>
+    </a>
     {% for category in post.categories %}
         <span><a class="label label-default" href="/tags#{{ category }}">{{ category }}</a></span>
     {% endfor %}
