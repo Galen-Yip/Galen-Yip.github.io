@@ -2,6 +2,7 @@
 layout:     post
 title:      "【译】使用requestIdleCallback"
 subtitle:   ""
+description: "requestIdleCallback是一个当浏览器处于闲置状态时，调度工作的新的性能相关的API..."
 date:       2015-10-06 17:00:00
 author:     "Galen"
 header-img: "post-bg-05.jpg"

@@ -2,6 +2,7 @@
 layout:     post
 title:      "mongo游标导致的栈溢出报错"
 subtitle:   ""
+description: "在mongo中每天的数据量大概是5500W+，每天一张collection。大数据量面前，直接把数据load到内存里的话，不用说，直接死翘翘了..."
 date:       2015-11-02 01:30:00
 author:     "Galen"
 header-img: "post-bg-05.jpg"

@@ -2,6 +2,7 @@
 layout:     post
 title:      "部落客初次搭成的第一篇文章"
 subtitle:   "my new blog"
+description: "这是本博第一篇文章，之后会同步之前的一些文章过来，而且也开始本博客的写作..."
 date:       2015-02-05 23:58:00
 author:     "Galen"
 header-img: "post-bg-01.jpg"

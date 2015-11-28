@@ -2,6 +2,7 @@
 layout:     post
 title:      "开年第一篇——步履不停"
 subtitle:   ""
+description: "明天就是新一年的第一天上班了。突然也想到，离毕业剩下3个月了。新年被满天飞的抢红包搅和得完全变了样，实实在在的一些年味好像也比不了往年。不过也就玩玩图图气氛..."
 date:       2015-02-27 23:58:00
 author:     "Galen"
 header-img: "post-bg-01.jpg"

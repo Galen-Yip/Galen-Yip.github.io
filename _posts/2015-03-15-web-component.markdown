@@ -2,6 +2,7 @@
 layout:     post
 title:      "Web Component"
 subtitle:   "面向未来"
+description: "Web Component目前只是作为草案，还没有完全的标准化。API可在变动中。但我们可以先来学习一下..."
 date:       2015-03-15 15:58:00
 author:     "Galen"
 header-img: "post-bg-02.jpg"

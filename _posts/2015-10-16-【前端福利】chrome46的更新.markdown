@@ -2,6 +2,7 @@
 layout:     post
 title:      "【前端福利】chrome46的更新"
 subtitle:   ""
+description: "昨天更新了下chrome，在mac和windows下都能更到46.0.2490.71版本。今天看到一个令人惊喜的更新..."
 date:       2015-10-16 10:30:00
 author:     "Galen"
 header-img: "post-bg-05.jpg"
