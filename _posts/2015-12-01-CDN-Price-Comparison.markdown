@@ -6,7 +6,7 @@ description: "简单做了一个主流CDN厂家的计费对比工具"
 date:       2015-12-01 08:10:00
 author:     "Galen"
 header-img: "post-bg-06.jpg"
-categories: [javascript] 
+categories: [web] 
 ---  
 
 听云发布了个报告《中国公有云用户体验报告》，报告虽不全面，但一定意义上能够反映各大CDN厂商的某些情况。  
