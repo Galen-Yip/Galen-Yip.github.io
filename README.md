@@ -6,7 +6,7 @@
 
 ### 地址
 
-(http://galen-yip.com)[http://galen-yip.com]
+[http://galen-yip.com](http://galen-yip.com)
 
 ### 博客使用方案
 
