@@ -4,6 +4,10 @@
 
 本博遵循MIT开源协议
 
+### 地址
+
+(http://galen-yip.com)[http://galen-yip.com]
+
 ### 博客使用方案
 
 * Jekyll 静态网站引擎
