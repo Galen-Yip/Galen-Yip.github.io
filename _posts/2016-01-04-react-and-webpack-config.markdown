@@ -27,6 +27,7 @@ categories: [webpack]
 ### 项目里的各种插件的用途：
 
 核心应用级插件：
+
 * react  react-dom  这两个就不说了
 
 开发插件：
