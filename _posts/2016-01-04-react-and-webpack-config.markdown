@@ -30,8 +30,9 @@ categories: [webpack]
 * react  react-dom  这两个就不说了
 
 开发插件：
-* webpack  这个不用说了，打包构建用
-* html-webpack-plugin  自动生成index.html
+
+* webpack  这个不用说了，打包构建用  
+* html-webpack-plugin  自动生成index.html  
 * html-webpack-template   比默认的html设置更好，里面包括了可以初始化一些数据之类的
 * webpack-dev-server  开发用的服务器，用于npm start，不用每次去执行打包命令，而且会liveload
 * webpack-merge  用于开发环境和生产环境的web pack配置文件的配置合并
