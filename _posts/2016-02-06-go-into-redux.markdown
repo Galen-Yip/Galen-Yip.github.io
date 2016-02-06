@@ -13,7 +13,7 @@ categories: [react]
 
 > 题外话，有看到前些天转的很火的[@徐叔叔的回答](https://www.zhihu.com/question/39943474/answer/83905933)。说下就自己的看法吧，这也是为什么有这篇redux研究文章的原因。考虑适用性，团队效率等等都是十分赞同的，但就个人而言，自己纯属是为了满足个人的好奇心，为了在这大浪淘沙的前端变革时代，能身为一个历经者。仅此而已。
 
-> [github项目地址](https://github.com/Galen-Yip/react-redux-router/tree/master/app)
+> [github项目地址](https://github.com/Galen-Yip/react-redux-router)
 
 ### 核心：
 
