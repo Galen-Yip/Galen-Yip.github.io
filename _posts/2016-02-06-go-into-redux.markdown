@@ -3,7 +3,7 @@ layout:     post
 title:      "浅显易懂的Redux深究"
 subtitle:   ""
 description: "半个多月redux的学习，分析下redux，当做记录吧"
-date:       2016-02-06 00:01:00
+date:       2016-02-06 00:01:30
 author:     "Galen"
 header-img: "post-bg-06.jpg"
 categories: [react] 
