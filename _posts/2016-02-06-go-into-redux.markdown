@@ -102,7 +102,7 @@ redux中提供了bindActionCreators()，就是将ActionCreator外加上了一层
 
 ### Reducers
 
-Reducers类似于flux里面的Store，但在Redux中，它是挡在Store前的一个东西，Redux里只有一个Store，所以这些Reduers的功能就是针对这个唯一的Store内的State的部分内容进行更新 Reduer接收2个参数，旧的State和action，返回新的State
+Reducers类似于flux里面的Store，但在Redux中，它是挡在Store前的一个东西，Redux里只有一个Store，所以这些Reduers的功能就是针对这个唯一的Store内的State的部分内容进行更新. Reduer接收2个参数，旧的State和action，返回新的State。*Reducer是纯函数，不应该有任何的side effect，如API调用或路由跳转这些，应该放在dispatch action之前做。它仅仅是用于计算下一个state*
 例子：
 
 {% highlight javascript %}

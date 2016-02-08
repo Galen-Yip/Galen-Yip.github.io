@@ -1,6 +1,6 @@
 /*!
  * Mr.Galen's Blog v1.0.0 (http://galen-yip.github.io)
- * Copyright 2015 Galen-Yip
+ * Copyright 2016 Galen-Yip
  * Licensed under Apache 2.0 ()
  */
 
@@ -214,7 +214,7 @@ hr.small {
   .intro-header .site-heading,
   .intro-header .post-heading,
   .intro-header .page-heading {
-    padding: 150px 0;
+    padding: 200px 0;
   }
 }
 .intro-header .site-heading,
