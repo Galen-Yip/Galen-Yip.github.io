@@ -141,12 +141,12 @@ function renderFullPage(html, initialState) {
              <!--[if IE 7 ]>    <html lang="en" class="ie7" > <![endif]-->
              <!--[if IE 8 ]>    <html lang="en" class="ie8" > <![endif]-->
              <!--[if IE 9 ]>    <html lang="en" class="ie9" > <![endif]-->
-             <!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="" > <!--<![endif]-->
+             <!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="" > 
+             <!--<![endif]-->
              <head>
                <meta charset="utf-8">
                <title>react-redux-router</title>
                <link href="./build/${assets.assetsByChunkName.app[1]}" rel="stylesheet">
-              
              </head>
              <body>
 
@@ -159,9 +159,8 @@ function renderFullPage(html, initialState) {
              <script src="./build/${assets.assetsByChunkName.vendors}"></script>
 
              <script src="./build/${assets.assetsByChunkName.app[0]}"></script>
-
              </body>
-         </html>
+        </html>
          `
 }
 
@@ -202,9 +201,10 @@ if(initialState) {
 
 顶级的不变，只把值变成immutable data
 
-5、`Warning: React attempted to reuse markup in a container but the checksum was invalid. This generally means that you are using server rendering and the markup generated on the server was not what the client was expecting. React injected new markup to compensate which works but you have lost many of the benefits of server rendering. Instead, figure out why the markup being generated is different on the client or server:
+5、`Warning: React attempted to reuse markup in a container but the checksum was invalid......
  (client) "><a class="" href="#Home" data-reactid=
  (server) "><a class="" href="Home" data-reactid="`
+
 如上的错误提示，是服务端渲染出来的跟客户端预期渲染的不一样，最后定位是客户端用的是 'history/lib/createHashHistory'导致的，换成'history/lib/createBrowserHistory'问题解决
 
 > 换成createBrowserHistory后，在浏览器直接打开index.html会报
