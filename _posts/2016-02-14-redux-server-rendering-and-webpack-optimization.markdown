@@ -144,20 +144,22 @@ function renderFullPage(html, initialState) {
 			<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="" > 
 			<!--<![endif]-->
 			<head>
-			   <meta charset="utf-8">
-			   <title>react-redux-router</title>
-			   <link href="./build/${assets.assetsByChunkName.app[1]}" rel="stylesheet">
+				<meta charset="utf-8">
+				<title>react-redux-router</title>
+
+				<link href="./build/${assets.assetsByChunkName.app[1]}" rel="stylesheet">
 			</head>
 			<body>
 
 			<div id="app">${html}</div>
+
 			<script>
 				window.__INITIAL_STATE__ = ${JSON.stringify(initialState)}
 			</script>
+
 			<script src="http://cdn.bootcss.com/react/0.14.7/react.min.js"></script>
 			<script src="http://cdn.bootcss.com/react/0.14.7/react-dom.min.js"></script>
 			<script src="./build/${assets.assetsByChunkName.vendors}"></script>
-
 			<script src="./build/${assets.assetsByChunkName.app[0]}"></script>
 			</body>
 		</html>
