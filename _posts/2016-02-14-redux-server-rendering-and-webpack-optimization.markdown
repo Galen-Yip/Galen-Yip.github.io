@@ -98,74 +98,74 @@ app.use(handleRender);
 
 function handleRender(req, res) {
 
-    const history = createMemoryHistory();
-    const routes = createRoutes(history)
-    const location = createLocation(req.url);
+	const history = createMemoryHistory();
+	const routes = createRoutes(history)
+	const location = createLocation(req.url);
 
-    // req.url is the full url
-    match({ routes, location }, (err, redirectLocation, renderProps) => {
-        if(err) {
-            return res.status(500).send(err.message)
-        }
+	// req.url is the full url
+	match({ routes, location }, (err, redirectLocation, renderProps) => {
+		if(err) {
+			return res.status(500).send(err.message)
+		}
 
-        if(!renderProps) {
-            return res.status(404).send('not found')
-        }
+		if(!renderProps) {
+			return res.status(404).send('not found')
+		}
 
-        const store = compose(
-            applyMiddleware.apply(this, middleware)
-        )(createStore)(rootReducer)
+		const store = compose(
+			applyMiddleware.apply(this, middleware)
+		)(createStore)(rootReducer)
 
-        // render the component to string
-        const initialView = renderToString(
-            <div>
-                <Provider store={store}>
-                    { <RoutingContext {...renderProps} /> }
-                </Provider>
-            </div>
-        )
+		// render the component to string
+		const initialView = renderToString(
+			<div>
+				<Provider store={store}>
+					{ <RoutingContext {...renderProps} /> }
+				</Provider>
+			</div>
+		)
 
-        const initialState = store.getState();
+		const initialState = store.getState();
 
-        res.status(200).send(renderFullPage(initialView, initialState))
-    })
+		res.status(200).send(renderFullPage(initialView, initialState))
+	})
 
 }
 
 function renderFullPage(html, initialState) {
-     const assets = require('./stats.json');
+	const assets = require('./stats.json');
 
-     return `
-         <!DOCTYPE html>
-             <!--[if lt IE 7 ]> <html lang="en" class="ie6" > <![endif]-->
-             <!--[if IE 7 ]>    <html lang="en" class="ie7" > <![endif]-->
-             <!--[if IE 8 ]>    <html lang="en" class="ie8" > <![endif]-->
-             <!--[if IE 9 ]>    <html lang="en" class="ie9" > <![endif]-->
-             <!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="" > 
-             <!--<![endif]-->
-             <head>
-               <meta charset="utf-8">
-               <title>react-redux-router</title>
-               <link href="./build/${assets.assetsByChunkName.app[1]}" rel="stylesheet">
-             </head>
-             <body>
+	return `
+		<!DOCTYPE html>
+			<!--[if lt IE 7 ]> <html lang="en" class="ie6" > <![endif]-->
+			<!--[if IE 7 ]>    <html lang="en" class="ie7" > <![endif]-->
+			<!--[if IE 8 ]>    <html lang="en" class="ie8" > <![endif]-->
+			<!--[if IE 9 ]>    <html lang="en" class="ie9" > <![endif]-->
+			<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="" > 
+			<!--<![endif]-->
+			<head>
+			   <meta charset="utf-8">
+			   <title>react-redux-router</title>
+			   <link href="./build/${assets.assetsByChunkName.app[1]}" rel="stylesheet">
+			</head>
+			<body>
 
-             <div id="app">${html}</div>
-             <script>
-                window.__INITIAL_STATE__ = ${JSON.stringify(initialState)}
-             </script>
-             <script src="http://cdn.bootcss.com/react/0.14.7/react.min.js"></script>
-             <script src="http://cdn.bootcss.com/react/0.14.7/react-dom.min.js"></script>
-             <script src="./build/${assets.assetsByChunkName.vendors}"></script>
+			<div id="app">${html}</div>
+			<script>
+				window.__INITIAL_STATE__ = ${JSON.stringify(initialState)}
+			</script>
+			<script src="http://cdn.bootcss.com/react/0.14.7/react.min.js"></script>
+			<script src="http://cdn.bootcss.com/react/0.14.7/react-dom.min.js"></script>
+			<script src="./build/${assets.assetsByChunkName.vendors}"></script>
 
-             <script src="./build/${assets.assetsByChunkName.app[0]}"></script>
-             </body>
-        </html>
-         `
+			<script src="./build/${assets.assetsByChunkName.app[0]}"></script>
+			</body>
+		</html>
+		`
 }
 
 app.listen(port, () => {
-    console.log('this server is running on ' + port)
+	console.log('this server is running on ' + port)
 });
 {% endhighlight %}
 
@@ -175,8 +175,8 @@ app.listen(port, () => {
 
 {% highlight javascript %}
 scripts: {
-     "server": "nodemon server.js --exec babel-node",
-     ...
+	 "server": "nodemon server.js --exec babel-node",
+	 ...
 }
 {% endhighlight %}
 
@@ -193,9 +193,9 @@ scripts: {
 
 {% highlight javascript %}
 if(initialState) {
-    Object.keys(initialState).forEach(key => {
-        initialState[key] = fromJS(initialState[key])
-    })
+	Object.keys(initialState).forEach(key => {
+		initialState[key] = fromJS(initialState[key])
+	})
 }
 {% endhighlight %}
 
@@ -218,9 +218,9 @@ if(initialState) {
 {% highlight javascript %}
 plugins: [
   new webpack.DefinePlugin({
-      'process.env': {
-          NODE_ENV: '"production"'
-      }
+	  'process.env': {
+		  NODE_ENV: '"production"'
+	  }
   })
 ]
 {% endhighlight %}
@@ -234,9 +234,9 @@ plugins: [
 {% highlight javascript %}
 const initialState = window.__INITIAL_STATE__;
 if(initialState) {
-    Object.keys(initialState).forEach(key => {
-        initialState[key] = fromJS(initialState[key])
-    })
+	Object.keys(initialState).forEach(key => {
+		initialState[key] = fromJS(initialState[key])
+	})
 }
 const store = configureStore(initialState);
 {% endhighlight %}
@@ -269,13 +269,13 @@ alias: {
 
 {% highlight javascript %}
 resolve: {
-    alias: {
-    //     'react': path.resolve(PATHS.node_modules, 'react/dist/react.js'),
-    //     'react-dom': path.resolve(PATHS.node_modules, 'react-dom/dist/react-dom.js'),
-        'react-redux': path.resolve(PATHS.node_modules, 'react-redux/dist/react-redux.js'),
-        'react-router': path.resolve(PATHS.node_modules, 'react-router/lib/index.js'),
-        'redux': path.resolve(PATHS.node_modules, 'redux/dist/redux.js')
-    }
+	alias: {
+	//     'react': path.resolve(PATHS.node_modules, 'react/dist/react.js'),
+	//     'react-dom': path.resolve(PATHS.node_modules, 'react-dom/dist/react-dom.js'),
+		'react-redux': path.resolve(PATHS.node_modules, 'react-redux/dist/react-redux.js'),
+		'react-router': path.resolve(PATHS.node_modules, 'react-router/lib/index.js'),
+		'redux': path.resolve(PATHS.node_modules, 'redux/dist/redux.js')
+	}
 }
 {% endhighlight %}
 
