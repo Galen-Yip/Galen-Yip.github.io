@@ -19,6 +19,7 @@ categories: [react,webpack]
 
 - [上一篇文章传送门](http://galen-yip.com/react/2016/02/06/go-into-redux/)
 - [github项目传送门](https://github.com/Galen-Yip/react-redux-router)
+- [在线demo](http://45.78.33.77:3000)
 
 这一篇主要是webpack、redux、react-router和server rendering的应用，主要面向有了一定redux基础和webpack基础的，当做学习记录，如有不当，望不吝赐教
 
@@ -27,9 +28,10 @@ categories: [react,webpack]
 现如今的SPA，backbone、ember、vue、angular、react这些包括各家的前端轮子都biubiubiu冒出来，带来的好处真的太多，以前由server控制的转移到客户端。页面渲染、路由跳转、数据拉取等等等等JS完全控制了，也大大提高了用户体验，这里讲的客户端渲染，基本上就是客户端ajax拉取数据，然后渲染，之后js操控全部的逻辑。但是这也就主要造成了两个问题：
 
 1、SEO问题，爬虫抓不到内容。目前这个也是有五花八门的解决方案。
+
 2、客户端初始化渲染比服务端页面直出还是慢，需要等js加载完之后才能渲染。
 
-因此为了解决上面两个问题，我们就有了* 服务端渲染 *
+因此为了解决上面两个问题，我们就有了*服务端渲染*
 
 ### 服务端渲染
 
@@ -298,7 +300,7 @@ vendors由原来的376KB变成了247KB.
 
 用`CleanPlugin`，每次build的时候，清理一下build文件夹
 
-> 这个项目会慢慢地去完善它，再次祭出地址 [github传送门](https://github.com/Galen-Yip/react-redux-router)
+> 服务端改进了下，加了compress，用了ejs的模板引擎，这个项目会慢慢地去完善它，再次祭出地址 [github传送门](https://github.com/Galen-Yip/react-redux-router)
 
 
 
