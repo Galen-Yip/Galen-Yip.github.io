@@ -149,8 +149,8 @@ function renderFullPage(html, initialState) {
 
 				<link href="./build/${assets.assetsByChunkName.app[1]}" rel="stylesheet">
 			</head>
-			<body>
 
+			<body>
 			<div id="app">${html}</div>
 
 			<script>
@@ -162,6 +162,7 @@ function renderFullPage(html, initialState) {
 			<script src="./build/${assets.assetsByChunkName.vendors}"></script>
 			<script src="./build/${assets.assetsByChunkName.app[0]}"></script>
 			</body>
+			
 		</html>
 		`
 }
