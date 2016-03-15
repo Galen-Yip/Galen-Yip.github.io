@@ -162,7 +162,7 @@ function renderFullPage(html, initialState) {
 			<script src="./build/${assets.assetsByChunkName.vendors}"></script>
 			<script src="./build/${assets.assetsByChunkName.app[0]}"></script>
 			</body>
-			
+
 		</html>
 		`
 }
@@ -301,7 +301,7 @@ vendors由原来的376KB变成了247KB.
 
 4、清理build文件夹
 
-用`CleanPlugin`，每次build的时候，清理一下build文件夹
+用`CleanPlugin`，每次build的时候，清理一下build文件夹 
 
 > 服务端改进了下，加了compress，用了ejs的模板引擎，这个项目会慢慢地去完善它，再次祭出地址 [github传送门](https://github.com/Galen-Yip/react-redux-router)
 
