@@ -1,0 +1,31 @@
+---
+layout: page
+title: "Tags"
+description: "keep hungry keep foolish"
+header-img: "tags-bg.jpg"
+---
+
+<ul class="list-unstyled">
+{% for category in site.categories %}
+    <li id="{{category[0]}}"><i class="fa fa-rocket" aria-hidden="true"> </i>  <b>{{category[0]}} </b> <span class="badge"> {{category | last | size}}</span>
+    {% for post in category[1] %}
+    <p><a href="{{post.url}}">{{post.title}}</a></p>
+    {% endfor %}
+    </li>
+{% endfor %}
+</ul>
+<!-- Pager -->
+{% if paginator.total_pages > 1 %}
+<ul class="pager">
+    {% if paginator.previous_page %}
+    <li class="previous">
+        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
+    </li>
+    {% endif %}
+    {% if paginator.next_page %}
+    <li class="next">
+        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
+    </li>
+    {% endif %}
+</ul>
+{% endif %}

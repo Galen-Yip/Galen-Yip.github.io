@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="keywords" content="Galen-Yip,galenye,前端开发,前端,F2E">
+<meta name="description" content="Galen's blog,galenye,前端开发,设计,前端开发工程师">
+<link rel="shortcut icon" href="http://7xnand.com1.z0.glb.clouddn.com/avatar.png">
+<title>CDN计费————Galen's Blog</title>
+<link rel="canonical" href="http://galen-yip.com/">
+ 
+<link rel="stylesheet" href="http://7xnand.com1.z0.glb.clouddn.com/bootstrap.min.css">
+<style>
+footer{padding: 50px 0;}
+.jumbotron{text-align: center;margin-bottom: 50px;}
+.searchbarWrap{max-width: 800px;margin: 30px auto;}
+</style> 
+<!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+<script src="//push.zhanzhang.baidu.com/push.js"></script>
+<script src="//hm.baidu.com/hm.js?38726958ceae2be17f47715028a943f9"></script><script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?38726958ceae2be17f47715028a943f9";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+</head>
+<body>
+    <div class="jumbotron">
+        <h1>CDN Price Comparison</h1>
+        <p class="lead">选取主流的几家CDN厂家，按各官方计费标准，根据你输入的带宽或流量计算出价格.方便进行比对,适合中小用户</p>
+        <div class="row searchbarWrap">
+            <div class="col-lg-12">
+                <div class="input-group input-group-lg">
+                  <div class="input-group-btn">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">流量 <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                      <li><a href="javascript:;">流量</a></li>
+                      <li><a href="javascript:;">带宽</a></li>
+                    </ul>
+                  </div><!-- /btn-group -->
+                  <input type="text" class="form-control" aria-label="Text input with dropdown button" placeholder="请输入你平均每天的流量">
+                  <span class="input-group-addon" id="basic-addon2">GB</span>
+                </div><!-- /input-group -->
+              </div>
+        </div>    
+        <p><a class="btn btn-lg btn-success" href="javascript:;" role="button">开始计费</a></p>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h3 class="panel-title">AWS</h3>
+                </div>
+                <div class="panel-body aws">
+                  无
+                </div>
+              </div>
+              <div class="panel panel-primary">
+                <div class="panel-heading">
+                  <h3 class="panel-title">阿里云</h3>
+                </div>
+                <div class="panel-body aliyun">
+                  无
+                </div>
+              </div>
+              <div class="panel panel-info">
+                <div class="panel-heading">
+                  <h3 class="panel-title">七牛</h3>
+                </div>
+                <div class="panel-body qiniu">
+                  无
+                </div>
+              </div>
+            </div><!-- /.col-sm-4 -->
+            <div class="col-sm-4">
+              <div class="panel panel-success">
+                <div class="panel-heading">
+                  <h3 class="panel-title">腾讯云</h3>
+                </div>
+                <div class="panel-body qcloud">
+                  无
+                </div>
+              </div>
+              <div class="panel panel-info">
+                <div class="panel-heading">
+                  <h3 class="panel-title">又拍云</h3>
+                </div>
+                <div class="panel-body upyun">
+                  无
+                </div>
+              </div>
+            </div><!-- /.col-sm-4 -->
+            <div class="col-sm-4">
+              <div class="panel panel-warning">
+                <div class="panel-heading">
+                  <h3 class="panel-title">百度开放云</h3>
+                </div>
+                <div class="panel-body bce">
+                  无
+                </div>
+              </div>
+              <div class="panel panel-danger">
+                <div class="panel-heading">
+                  <h3 class="panel-title">UCloud</h3>
+                </div>
+                <div class="panel-body ucloud">
+                  无
+                </div>
+              </div>
+            </div><!-- /.col-sm-4 -->
+            </div>
+        </div>
+    <footer>
+        <div class="container">
+        <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1" style="text-align: center">
+        <ul class="list-inline text-center">
+        <li>
+        <a href="https://github.com/Galen-Yip">
+        <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+        </span>
+        </a>
+        </li>
+        <li>
+        <a target="_blank" href="http://weibo.com/yexiaosi">
+        <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+        </span>
+        </a>
+        </li>
+        <li>
+        <a href="/feed.xml">
+        <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+        </span>
+        </a>
+        </li>
+        </ul>
+        <p class="copyright text-muted">Copyright © <a href="http://weibo.com/yexiaosi">Galen-Yip</a> 2015<br>
+        Powered by Jekyll , Github Pages.</p>
+        </div>
+        </div>
+        </div>
+    </footer>
+<script src="http://7xnand.com1.z0.glb.clouddn.com/jquery.min.js "></script>
+<script src="http://7xnand.com1.z0.glb.clouddn.com/bootstrap.min.js "></script>
+<script>
+    $(function() {
+        var BD_PRICE = {
+            'aws': {
+
+            },
+            'aliyun': {
+                0: 1,
+                512: 0.9,
+                5120: 0.76
+            },
+            'qcloud': {
+                0: 1.1,
+                512: 1,
+                5120: 0.9,
+                51200: 0.74
+            },
+            'upyun': {
+
+            },
+            'qiniu': {
+
+            },
+            'bce': {
+                0: 1,
+                512: 0.9,
+                5120: 0.76
+            },
+            'ucloud': {
+                0: 1.1,
+                500: 0.9,
+                5120: 0.8
+            }
+        }
+
+        var FLUX_PRICE = {
+            'aws': {
+                0: 0,
+                51200: 0.14,
+                409600: 0.135
+            },
+            'aliyun': {
+                0: 0.36,
+                10240: 0.32,
+                51200: 0.30,
+                102400: 0.26
+            },
+            'qcloud': {
+                0: 0.34,
+                2048: 0.32,
+                10240: 0.3,
+                51200: 0.28,
+                102400: 0.24
+            },
+            'upyun': {
+                0: 0.29
+            },
+            'qiniu': {
+                0: 0,
+                10: 0.29,
+                102400: 0.26
+            },
+            'bce': {
+                0: 0.36,
+                10240: 0.32,
+                51200: 0.3,
+                102400: 0.26
+            },
+            'ucloud': {
+                0: 0.45,
+                1024: 0.4,
+                10240: 0.36,
+                51200: 0.32,
+                102400: 0.28
+            }
+        }
+
+        $('.dropdown-menu li a').on('click', function(e) {
+            $('.dropdown-toggle').html($(e.target).html() + ' <span class="caret"></span>');
+            $('.form-control').attr('placeholder', '请输入你平均每天的' + $(e.target).html());
+            if($('.dropdown-toggle').text() === '流量 ') {
+                $('#basic-addon2').html('GB')
+            }else{
+                $('#basic-addon2').html('Mbps')
+            }
+        })
+
+        $('.btn-success').on('click', function() {
+            var type = $('.dropdown-toggle').text() === '流量 ' ? FLUX_PRICE : BD_PRICE;
+            var val = +$.trim($('.form-control').val())
+
+            $.each(type, function(k, v) {
+                if(v['0'] === '') {
+                    return
+                }
+
+                var final_price = '无';
+
+                $.each(v, function(rank, price) {
+                    if(val > +rank) {
+                        final_price = price * val;
+                        if(k === 'aws') {
+                            final_price += '美元'
+                        }else{
+                            final_price += '元'
+                        }
+
+                        if(k === 'upyun' || k === 'qiniu') {
+                            final_price += '（未包含接口的请求数费用以及存储费用）'
+                        }
+                    }else{
+                        return false
+                    }
+                })
+
+                $('.' + k).html(final_price)
+            })
+
+
+        })
+    })
+</script>
+
+
+
+</body>
+</html>
