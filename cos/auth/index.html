@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>COS Auth</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Loading Bootstrap -->
+    <link href="./css/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Loading Flat UI -->
+    <link href="./css/flat-ui.css" rel="stylesheet">
+
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+    <!--[if lt IE 9]>
+      <script src="./js/vendor/html5shiv.js"></script>
+      <script src="./js/vendor/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <style>
+      body {
+        padding-bottom: 50px;
+      }
+
+      .navbar {
+        border-radius: 0;
+      }
+
+      .card {
+        background-color: #eee;
+        border-radius: 6px;
+        padding: 20px;
+        word-wrap: break-word;
+      }
+    </style>
+
+    <!-- Static navbar -->
+    <nav role="navigation" class="navbar navbar-inverse navbar-embossed navbar-lg">
+      <div class="navbar-header">
+        <button data-target="#bs-example-navbar-collapse-17" data-toggle="collapse" class="navbar-toggle" type="button">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="#" class="navbar-brand">COS Auth</a>
+      </div>
+      <div id="bs-example-navbar-collapse-17" class="collapse navbar-collapse">
+      </div>
+    </nav>
+
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h4 class="lead">签名生成工具</h4>
+          <form class="form-horizontal" role="form">
+            <div class="form-group">
+              <label class="col-lg-2 control-label">API Type</label>
+              <div class="col-lg-10">
+                <select data-toggle="select" class="form-control select select-primary" id="apiType-selector">
+                  <option value="json">JSON</option>
+                  <option value="xml">XML</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="Appid" class="col-lg-2 control-label">Appid</label>
+              <div class="col-lg-10">
+                <input type="text" class="form-control" id="Appid" placeholder="Appid" v-model="appid">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="SecretId" class="col-lg-2 control-label">SecretId</label>
+              <div class="col-lg-10">
+                <input type="text" class="form-control" id="SecretId" placeholder="SecretId" v-model="secretId">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="SecretKey" class="col-lg-2 control-label">SecretKey</label>
+              <div class="col-lg-10">
+                <input type="text" class="form-control" id="SecretKey" placeholder="SecretKey" v-model="secretKey">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="Bucket" class="col-lg-2 control-label">Bucket</label>
+              <div class="col-lg-10">
+                <input type="text" class="form-control" id="Bucket" placeholder="Bucket" v-model="bucket">
+              </div>
+            </div>
+            <div class="form-group" v-if="apiType === 'json'">
+              <label for="ExpiredTime" class="col-lg-2 control-label">ExpiredTime</label>
+              <div class="col-lg-10">
+                <input type="text" class="form-control" id="ExpiredTime" placeholder="多次签名填失效时刻时间戳，单位为秒，单次签名填0" v-model="expiredTime">
+              </div>
+            </div>
+            <div class="form-group" v-if="apiType === 'json'">
+              <label for="CurrentTime" class="col-lg-2 control-label">CurrentTime</label>
+              <div class="col-lg-10">
+                <input type="text" class="form-control" id="CurrentTime" placeholder="当前时间戳，单位为秒" v-model="currentTime">
+              </div>
+            </div>
+            <div class="form-group" v-if="apiType === 'xml'">
+              <label for="http-method" class="col-lg-2 control-label">Http method</label>
+              <div class="col-lg-10">
+                <input type="text" class="form-control" id="http-method" placeholder="请求方法，小写：get/post/put/delete" v-model="httpMethod">
+              </div>
+            </div>
+            <div class="form-group" v-if="apiType === 'xml'">
+              <label for="pathname" class="col-lg-2 control-label">Pathname</label>
+              <div class="col-lg-10">
+                <input type="text" class="form-control" id="pathname" placeholder="请求路径，如：/或/a/b" v-model="pathname">
+              </div>
+            </div>
+            <div class="form-group" v-if="apiType === 'xml'">
+              <label for="q-sign-time" class="col-lg-2 control-label">q-sign-time</label>
+              <div class="col-lg-10">
+                <input type="text" class="form-control" id="q-sign-time" placeholder="起止时间，如：1480932292;1481012298" v-model="qSignTime">
+              </div>
+            </div>
+            <div class="form-group" v-if="apiType === 'xml'">
+              <label for="q-header-list" class="col-lg-2 control-label">header-list</label>
+              <div class="col-lg-10">
+                <input type="text" class="form-control" id="q-header-list" placeholder="HTTP请求头部列表，key小写，如：a=1&b=2" v-model="headerList">
+              </div>
+            </div>
+            <div class="form-group" v-if="apiType === 'xml'">
+              <label for="q-url-param-list" class="col-lg-2 control-label">url-param-list</label>
+              <div class="col-lg-10">
+                <input type="text" class="form-control" id="q-url-param-list" placeholder="请求参数列表，key小写，如：a=1&b=2" v-model="urlParamList">
+              </div>
+            </div>
+            <div class="form-group" v-if="apiType === 'json'">
+              <label for="RandomId" class="col-lg-2 control-label">RandomId</label>
+              <div class="col-lg-10" v-if="apiType === 'json'">
+                <input type="text" class="form-control" id="RandomId" placeholder="随机串，10进制正整数，最长 10 位" v-model="randomId">
+              </div>
+            </div>
+            <div class="form-group" v-if="apiType === 'json'">
+              <label for="FilePath" class="col-lg-2 control-label">FilePath</label>
+              <div class="col-lg-10">
+                <input type="text" class="form-control" id="FilePath" placeholder="可选，文件路径，/[dirname]/[filename]" v-model="filePath">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-lg-offset-2 col-lg-10">
+                <button type="button" class="btn btn-primary" @click="generate">生成</button>
+              </div>
+            </div>
+          </form>
+          <div class="card" v-if="hasGenerate && apiType === 'json'">
+            <dl>
+              <dt>fileid:</dt>
+              <dd>{{fileId}}</dd>
+              <dt>明文字符串 Original:</dt>
+              <dd>{{original}}</dd>
+              <dt>签名SignTmp:</dt>
+              <dd>{{signTmp}}</dd>
+            </dl>  
+            <p>最终签名:</p>
+            <p class="text-info">{{sign}}</p>
+          </div>
+          <div class="card" v-if="hasGenerate && apiType === 'xml'">
+            <dl>
+              <dt>SignKey:</dt>
+              <dd>{{signKey}}</dd>
+              <dt>HttpString:</dt>
+              <dd>{{httpString}}</dd>
+              <dt>StringToSign:</dt>
+              <dd>{{stringToSign}}</dd>
+              <dt>Signature:</dt>
+              <dd>{{qSignature}}</dd>
+            </dl>  
+            <p>最终签名:</p>
+            <p class="text-info">{{authorization}}</p>
+          </div>
+        </div><!-- /.col-md-12 -->
+      </div>
+    </div> <!-- /container -->
+
+    <script src="./js/vendor/vue.min.js"></script>
+    <script src="./js/vendor/jquery.min.js"></script>
+    <script src="./js/vendor/crypto.js"></script>
+    <script src="./js/flat-ui.min.js"></script>
+
+    <script src="./js/main.js"></script>
+
+  </body>
+</html>
