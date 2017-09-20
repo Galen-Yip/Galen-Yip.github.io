@@ -29,8 +29,6 @@
       qSignTime: '',
       headerList: '',
       urlParamList: '',
-      qHeaderList: '',
-      qUrlParamList: '',
 
       
       signKey: '',
@@ -87,13 +85,11 @@
           var qSignAlgorithm = this.qSignAlgorithm;
           var qSignTime = this.qSignTime;
           var qKeyTime = qSignTime;
-          var headerList = this.headerList;
-          var urlParamList = this.urlParamList;
-          var qHeaderList = this.getStrKeys(this.qHeaderList);
-          var qUrlParamList = this.getStrKeys(this.qUrlParamList);
+          var qHeaderList = this.getStrKeys(this.headerList);
+          var qUrlParamList = this.getStrKeys(this.urlParamList);
 
           var signKey = CryptoJS.HmacSHA1(qKeyTime, secretKey).toString();
-          var httpString = [httpMethod, pathname, this.encodeValue(headerList), this.encodeValue(urlParamList), ''].join('\n');
+          var httpString = [httpMethod, pathname, this.encodeValue(qHeaderList), this.encodeValue(qUrlParamList), ''].join('\n');
           var stringToSign = [qSignAlgorithm, qSignTime, CryptoJS.SHA1(httpString).toString(), ''].join('\n');
           var qSignature = CryptoJS.HmacSHA1(stringToSign, signKey).toString();
           var authorization = [
