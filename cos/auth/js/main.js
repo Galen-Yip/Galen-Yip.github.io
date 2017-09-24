@@ -89,7 +89,7 @@
           var qUrlParamList = this.getStrKeys(this.urlParamList);
 
           var signKey = CryptoJS.HmacSHA1(qKeyTime, secretKey).toString();
-          var httpString = [httpMethod, pathname, this.encodeValue(qHeaderList), this.encodeValue(qUrlParamList), ''].join('\n');
+          var httpString = [httpMethod, pathname, this.encodeValue(this.headerList), this.encodeValue(this.urlParamList), ''].join('\n');
           var stringToSign = [qSignAlgorithm, qSignTime, CryptoJS.SHA1(httpString).toString(), ''].join('\n');
           var qSignature = CryptoJS.HmacSHA1(stringToSign, signKey).toString();
           var authorization = [
