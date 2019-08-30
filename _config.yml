@@ -1,9 +1,9 @@
 # Site settings
-title: Galen's Blog
+title: Galen's Page
 header-img: "home-bg.jpg"
 email: 275497985@qq.com
 keywords: "Galen-Yip,galenye,前端开发,前端,F2E"
-description: "Galen's blog,galenye,前端开发,设计,前端开发工程师"
+description: "Galen's Page,galenye,前端开发,设计,前端开发工程师"
 baseurl: ""
 cdnurl: "http://7xnand.com1.z0.glb.clouddn.com"
 url: "http://galen-yip.com"
